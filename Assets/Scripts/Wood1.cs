@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class Wood : MonoBehaviour
+public class Wood1 : MonoBehaviour
 {
-    private WoodSpawner spawner;
+    [SerializeField] private float timeValue = 10f;
+
+    private Wood1Spawner spawner;
     private bool isPickedUp;
     private bool playerInRange;
 
-    public void SetSpawner(WoodSpawner spawnerRef)
+    public void SetSpawner(Wood1Spawner spawnerRef)
     {
         spawner = spawnerRef;
     }
