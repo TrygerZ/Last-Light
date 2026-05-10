@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9100343246445288134}
   - component: {fileID: 4452685884997544506}
-  - component: {fileID: 4467830767356700741}
-  - component: {fileID: 2991662531728836424}
+  - component: {fileID: 9124671082575175812}
   - component: {fileID: 4435324103958104613}
   m_Layer: 6
   m_Name: Dummy Wood
@@ -81,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1992171141
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 109800182, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
@@ -94,7 +93,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!60 &4467830767356700741
+--- !u!60 &9124671082575175812
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,7 +123,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -154,33 +153,6 @@ PolygonCollider2D:
       - {x: 1.4364978, y: 0.121674865}
       - {x: 1.3820609, y: 0.18686254}
   m_UseDelaunayMesh: 1
---- !u!50 &2991662531728836424
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465610908160972485}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &4435324103958104613
 MonoBehaviour:
   m_ObjectHideFlags: 0
