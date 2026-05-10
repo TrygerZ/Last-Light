@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3548370695875669431}
   - component: {fileID: 5194425323160193976}
   - component: {fileID: 2629727906964853812}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Camp Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8748053427673427089}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.461, y: -2.453, z: 0}
   m_LocalScale: {x: 1.9836912, y: 1.9836912, z: 1.9836912}
   m_ConstrainProportionsScale: 0
