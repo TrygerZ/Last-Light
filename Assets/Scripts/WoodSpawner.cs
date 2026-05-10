@@ -25,6 +25,16 @@ public class WoodSpawner : MonoBehaviour
 
     void SpawnWood()
     {
+        if (woodPrefab == null)
+        {
+            return;
+        }
+
+        if (WoodContainer == null)
+        {
+            return;
+        }
+
         // Generate posisi random di dalam area yang ditentukan
         float randomX = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
         float randomY = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
@@ -35,7 +45,7 @@ public class WoodSpawner : MonoBehaviour
         currentWoodCount++;
         
         // Jika ada script untuk menghapus kayu, beri tahu spawner
-        WoodPickup woodPickup = newWood.GetComponent<WoodPickup>();
+        Wood woodPickup = newWood.GetComponent<Wood>();
         if (woodPickup != null)
         {
             woodPickup.SetSpawner(this);
@@ -44,6 +54,9 @@ public class WoodSpawner : MonoBehaviour
 
     public void OnWoodPickedUp()
     {
-        currentWoodCount--;
+        if(currentWoodCount > 0)
+        {
+            currentWoodCount--;
+        }
     }
 }
