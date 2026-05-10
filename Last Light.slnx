@@ -4,8 +4,8 @@
   <Project Path="Unity.AppUI.csproj" />
   <Project Path="Unity.ShaderGraph.Editor.csproj" />
   <Project Path="Unity.Mathematics.csproj" />
-  <Project Path="Unity.Multiplayer.Center.Editor.csproj" />
   <Project Path="Unity.Cinemachine.Editor.csproj" />
+  <Project Path="Unity.Multiplayer.Center.Editor.csproj" />
   <Project Path="Unity.2D.Psdimporter.Editor.csproj" />
   <Project Path="Unity.InferenceEngine.Microsoft.Msagl.csproj" />
   <Project Path="Unity.VisualScripting.Core.Editor.csproj" />
