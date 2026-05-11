@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Movement_Input : MonoBehaviour
 {
-   public float movespeed = 5f;
+   public float movespeed;
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
