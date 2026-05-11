@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class Wood3 : MonoBehaviour
+public class Wood1 : MonoBehaviour
 {
-    [SerializeField] private float timeValue = 20f;
+    [SerializeField] private float timeValue = 10f;
 
-    private Wood3Spawner spawner;
+    private Wood1Spawner spawner;
     private bool isPickedUp;
     private bool playerInRange;
 
-    public void SetSpawner(Wood3Spawner spawnerRef)
+    public void SetSpawner(Wood1Spawner spawnerRef)
     {
         spawner = spawnerRef;
     }
@@ -47,7 +47,7 @@ public class Wood3 : MonoBehaviour
         if (other == null) return false;
         if (other.CompareTag("Player")) return true;
         if (other.transform.root.CompareTag("Player")) return true;
-        if (other.GetComponentInParent<Player>() != null) return true;
+        if (other.GetComponentInParent<Movement_Input>() != null) return true;
         return false;
     }
 
