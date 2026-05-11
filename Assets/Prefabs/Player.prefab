@@ -170,9 +170,10 @@ GameObject:
   - component: {fileID: 6274205768076339018}
   - component: {fileID: 2743610444859301210}
   - component: {fileID: 797767213322142930}
+  - component: {fileID: 246466920381525493}
   m_Layer: 3
   m_Name: PlayerBody
-  m_TagString: Untagged
+  m_TagString: PlayerBody
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,6 +329,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
+--- !u!114 &246466920381525493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6115129852923450563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eee0a0e89594814a8207a52b80fc290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Backpack
+  wood1Count: 0
+  wood2Count: 0
+  wood3Count: 0
 --- !u!1 &7996016467779673720
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +356,7 @@ GameObject:
   - component: {fileID: 7732496313702160098}
   - component: {fileID: 739149566551337330}
   - component: {fileID: 8856686067510375976}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Torch
   m_TagString: PlayerTorch
   m_Icon: {fileID: 0}
