@@ -53,7 +53,14 @@ public class EnemySpawner : MonoBehaviour
 
         Vector2 randomSpawn = new Vector2(x, -2.166439f);
 
-        Instantiate(enemy, randomSpawn, Quaternion.identity, EnemySpawnerPoint);
+        GameObject newEnemy = Instantiate(enemy, randomSpawn, Quaternion.identity, EnemySpawnerPoint);
+
+        EnemyDeath enemyScript = newEnemy.GetComponent<EnemyDeath>();
+
+        if (enemyScript != null)
+        {
+            enemyScript.spawner = this;
+        }
     }
 
     private void setTimeUntilSpawn()
