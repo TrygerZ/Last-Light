@@ -5,11 +5,11 @@ public class Wood2 : MonoBehaviour
     [SerializeField] private float timeValue = 20f;
     [SerializeField] private string woodType = "Wood2";
 
-    private Wood2Spawner spawner;
+    private WoodSpawner spawner;
     private bool isPickedUp;
     private bool playerInRange;
 
-    public void SetSpawner(Wood2Spawner spawnerRef)
+    public void SetSpawner(WoodSpawner spawnerRef)
     {
         spawner = spawnerRef;
     }
