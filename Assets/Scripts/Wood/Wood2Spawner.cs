@@ -4,8 +4,8 @@ public class Wood2Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject woodPrefab;
     [SerializeField] private float spawnInterval = 8f;
-    [SerializeField] private Vector2 spawnAreaMin = new Vector2(-121f, -2.9f);
-    [SerializeField] private Vector2 spawnAreaMax = new Vector2(-10f, -2.9f);
+    [SerializeField] private Vector2 spawnAreaMin = new Vector2();
+    [SerializeField] private Vector2 spawnAreaMax = new Vector2();
     [SerializeField, Range(0, 100)] private int spawnWeight = 60;
     [SerializeField] private int maxWoodCount = 6;
     [SerializeField] private Transform woodContainer;

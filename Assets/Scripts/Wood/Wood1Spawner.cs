@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class Wood3Spawner : MonoBehaviour
+public class Wood1Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject woodPrefab;
-    [SerializeField] private float spawnInterval = 12f;
-    [SerializeField] private Vector2 spawnAreaMin = new Vector2(-121f, -2.9f);
-    [SerializeField] private Vector2 spawnAreaMax = new Vector2(-10f, -2.9f);
-    [SerializeField, Range(0, 100)] private int spawnWeight = 30;
-    [SerializeField] private int maxWoodCount = 3;
+    [SerializeField] private float spawnInterval = 5f;
+    [SerializeField] private Vector2 spawnAreaMin = new Vector2();
+    [SerializeField] private Vector2 spawnAreaMax = new Vector2();
+    [SerializeField, Range(0, 100)] private int spawnWeight = 10;
+    [SerializeField] private int maxWoodCount = 10;
     [SerializeField] private Transform woodContainer;
 
     private float spawnTimer;
@@ -46,7 +46,7 @@ public class Wood3Spawner : MonoBehaviour
         GameObject newWood = Instantiate(woodPrefab, spawnPos, Quaternion.identity, woodContainer);
         currentWoodCount++;
 
-        Wood3 woodPickup = newWood.GetComponent<Wood3>();
+        Wood1 woodPickup = newWood.GetComponent<Wood1>();
         if (woodPickup != null)
         {
             woodPickup.SetSpawner(this);
