@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - PlayerBody
+  - PlayerTorch
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
@@ -12,8 +16,9 @@ TagManager:
   - Water
   - UI
   - Wood
-  - 
-  - 
+  - Enemy
+  - Prop
+  - Torch
   - 
   - 
   - 
@@ -46,6 +51,12 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1159939951
+    locked: 0
+  - name: Prop
+    uniqueID: 1395008559
+    locked: 0
+  - name: Enemy
+    uniqueID: 2139408069
     locked: 0
   m_RenderingLayers:
   - Default
