@@ -17,7 +17,7 @@ TagManager:
   - UI
   - Wood
   - Enemy
-  - 
+  - Prop
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1159939951
+    locked: 0
+  - name: Prop
+    uniqueID: 1395008559
     locked: 0
   - name: Enemy
     uniqueID: 2139408069
