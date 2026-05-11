@@ -119,57 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &109408710
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 109408711}
-  - component: {fileID: 109408712}
-  m_Layer: 0
-  m_Name: WoodSpawner_lvl1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &109408711
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109408710}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1381973262}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &109408712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109408710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471888f577a9ea49bd5cdcf9897daa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Wood1Spawner
-  woodPrefab: {fileID: 465610908160972485, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
-  spawnInterval: 1
-  spawnAreaMin: {x: 10, y: -2.9}
-  spawnAreaMax: {x: 120, y: -2.9}
-  spawnWeight: 10
-  maxWoodCount: 5
-  woodContainer: {fileID: 765035343}
 --- !u!1 &155466358
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,67 +160,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 155466358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1471888f577a9ea49bd5cdcf9897daa9, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a38f1c6bc2bb7241871a2601e5012bb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Wood1Spawner
+  m_EditorClassIdentifier: Assembly-CSharp::WoodSpawner
   woodPrefab: {fileID: 465610908160972485, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
-  spawnInterval: 1
-  spawnAreaMin: {x: -120, y: -2.9}
-  spawnAreaMax: {x: -10, y: -2.9}
-  spawnWeight: 10
-  maxWoodCount: 5
   woodContainer: {fileID: 1867148944}
---- !u!1 &219136815
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 219136816}
-  - component: {fileID: 219136817}
-  m_Layer: 0
-  m_Name: WoodSpawner_lvl3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &219136816
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219136815}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1381973262}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &219136817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219136815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecb255cdd678a7846b8e1cc53a531edb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Wood3Spawner
-  woodPrefab: {fileID: 5789200093759024974, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
-  spawnInterval: 3
-  spawnAreaMin: {x: 10, y: -2.5}
-  spawnAreaMax: {x: 120, y: -2.5}
-  spawnWeight: 40
-  maxWoodCount: 1
-  woodContainer: {fileID: 765035343}
+  spawnInterval: 1
+  maxWoodCount: 10
+  spawnAreaMin: {x: -120, y: -2.9}
+  spawnAreaMax: {x: 120, y: -2.9}
+  exclusionXMin: -10
+  exclusionXMax: 10
+  spawnWeight: 10
 --- !u!1 &377299071
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 377299073}
   m_Layer: 0
-  m_Name: WoodSpawner_Left
+  m_Name: WoodSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 377299071}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -65, y: -2.97, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -648,16 +548,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 618820717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e14edb12c5b2d48a892b04f4158fb1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a38f1c6bc2bb7241871a2601e5012bb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Wood2Spawner
+  m_EditorClassIdentifier: Assembly-CSharp::WoodSpawner
   woodPrefab: {fileID: 982056747370159609, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
-  spawnInterval: 2
-  spawnAreaMin: {x: -120, y: -3}
-  spawnAreaMax: {x: -10, y: -3}
-  spawnWeight: 20
-  maxWoodCount: 2
   woodContainer: {fileID: 1867148944}
+  spawnInterval: 2
+  maxWoodCount: 5
+  spawnAreaMin: {x: -120, y: -3}
+  spawnAreaMax: {x: 120, y: -3}
+  exclusionXMin: -10
+  exclusionXMax: 10
+  spawnWeight: 20
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,37 +701,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
---- !u!1 &765035342
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 765035343}
-  m_Layer: 0
-  m_Name: WoodContainer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &765035343
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765035342}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1381973262}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1128185648
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,41 +754,6 @@ MonoBehaviour:
   right: 30
   outsideDistance: 120
   currentSpawn: 0
---- !u!1 &1381973261
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1381973262}
-  m_Layer: 0
-  m_Name: WoodSpawner_Right
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1381973262
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381973261}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65, y: -2.97, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 765035343}
-  - {fileID: 109408711}
-  - {fileID: 1629710572}
-  - {fileID: 219136816}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1593584489
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,67 +795,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1593584489}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecb255cdd678a7846b8e1cc53a531edb, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a38f1c6bc2bb7241871a2601e5012bb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Wood3Spawner
+  m_EditorClassIdentifier: Assembly-CSharp::WoodSpawner
   woodPrefab: {fileID: 5789200093759024974, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
-  spawnInterval: 3
-  spawnAreaMin: {x: -120, y: -2.5}
-  spawnAreaMax: {x: -10, y: -2.5}
-  spawnWeight: 40
-  maxWoodCount: 1
   woodContainer: {fileID: 1867148944}
---- !u!1 &1629710571
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1629710572}
-  - component: {fileID: 1629710573}
-  m_Layer: 0
-  m_Name: WoodSpawner_lvl2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1629710572
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629710571}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1381973262}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1629710573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629710571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47e14edb12c5b2d48a892b04f4158fb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Wood2Spawner
-  woodPrefab: {fileID: 982056747370159609, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
-  spawnInterval: 2
-  spawnAreaMin: {x: 10, y: -3}
-  spawnAreaMax: {x: 120, y: -3}
-  spawnWeight: 20
+  spawnInterval: 3
   maxWoodCount: 2
-  woodContainer: {fileID: 765035343}
+  spawnAreaMin: {x: -120, y: -2.5}
+  spawnAreaMax: {x: 120, y: -2.5}
+  exclusionXMin: -10
+  exclusionXMax: 10
+  spawnWeight: 40
 --- !u!1 &1867148943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,5 +1141,4 @@ SceneRoots:
   - {fileID: 8833342943506189471}
   - {fileID: 6128326040111724373}
   - {fileID: 377299073}
-  - {fileID: 1381973262}
   - {fileID: 1128185649}
