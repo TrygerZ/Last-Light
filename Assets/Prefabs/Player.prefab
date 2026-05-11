@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 5043159613837306285}
   - component: {fileID: 5402724454812053751}
   - component: {fileID: 7657330082244111691}
-  - component: {fileID: 6885514735534396150}
   - component: {fileID: 8389457717578763107}
+  - component: {fileID: 6885514735534396150}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -258,6 +258,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   movespeed: 20
+--- !u!114 &8389457717578763107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34599472558026804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fd9850f9c7d704398539e1aede9dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  health: 3
 --- !u!95 &6885514735534396150
 Animator:
   serializedVersion: 7
@@ -280,19 +293,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8389457717578763107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34599472558026804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53fd9850f9c7d704398539e1aede9dd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  health: 3
 --- !u!1 &7996016467779673720
 GameObject:
   m_ObjectHideFlags: 0
