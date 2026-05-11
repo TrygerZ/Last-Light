@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1574206791939606352}
   - component: {fileID: 5297693011880337012}
   - component: {fileID: 477220319109710110}
+  - component: {fileID: -1007528691691250384}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -171,7 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fd9850f9c7d704398539e1aede9dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 10
+  maxHealth: 1
+  spawner: {fileID: 0}
 --- !u!114 &477220319109710110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +187,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damage: 1
+--- !u!114 &-1007528691691250384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208267527633454361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd0b96f065b78e4794b8f561d4a4b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  moveSpeed: 10
+  track: 5
