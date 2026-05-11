@@ -3,12 +3,13 @@ using UnityEngine;
 public class Wood1 : MonoBehaviour
 {
     [SerializeField] private float timeValue = 10f;
+    [SerializeField] private string woodType = "Wood1";
 
-    private Wood1Spawner spawner;
+    private WoodSpawner spawner;
     private bool isPickedUp;
     private bool playerInRange;
 
-    public void SetSpawner(Wood1Spawner spawnerRef)
+    public void SetSpawner(WoodSpawner spawnerRef)
     {
         spawner = spawnerRef;
     }
@@ -54,6 +55,11 @@ public class Wood1 : MonoBehaviour
     private void PickUp()
     {
         isPickedUp = true;
+
+        if (Backpack.Instance != null)
+        {
+            Backpack.Instance.AddWood(woodType);
+        }
 
         if (spawner != null)
         {
