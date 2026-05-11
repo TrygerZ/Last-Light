@@ -8,10 +8,17 @@ public class Health : MonoBehaviour
     public int CurrentHealth { get; private set; }
     public int MaxHealth => maxHealth;
 
+    public EnemySpawner spawner;
+
 
     private void Awake()
     {
         CurrentHealth = maxHealth;
+    }
+
+    private void Start()
+    {
+        spawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemySpawner>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +35,11 @@ public class Health : MonoBehaviour
     {
         Damage damageSource = obj.GetComponent<Damage>();
         if (damageSource == null) return;
+
+        if(CompareTag("Enemy") && obj.CompareTag("Enemy"))
+        {
+            return;
+        }
 
         if (CompareTag("PlayerBody") && !obj.CompareTag("Enemy")) {
             return;
@@ -52,6 +64,10 @@ public class Health : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
+            if (CompareTag("Enemy"))
+            {
+                spawner.DecreaseSpawnCount(1);
+            }
             Destroy(gameObject);
         }
     }
