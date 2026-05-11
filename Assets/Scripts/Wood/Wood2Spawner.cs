@@ -49,7 +49,7 @@ public class Wood2Spawner : MonoBehaviour
         Wood2 woodPickup = newWood.GetComponent<Wood2>();
         if (woodPickup != null)
         {
-            woodPickup.SetSpawner(this);
+            woodPickup.SetSpawner(GetComponent<WoodSpawner>());
         }
     }
 
