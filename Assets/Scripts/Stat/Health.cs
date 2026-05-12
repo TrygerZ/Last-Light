@@ -38,7 +38,7 @@ public class Health : MonoBehaviour
             return;
         }
 
-        if (CompareTag("Enemy") && !obj.CompareTag("PlayerTorch")) {
+        if (CompareTag("Enemy") && !obj.CompareTag("Light")) {
             return;
         }
 
