@@ -14,46 +14,14 @@ public class Health : MonoBehaviour
         CurrentHealth = maxHealth;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        OnDamage(collision.gameObject);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        OnDamage(collision.gameObject);
-    }
-
-    private void OnDamage(GameObject obj)
-    {
-        Damage damageSource = obj.GetComponent<Damage>();
-        if (damageSource == null) return;
-        if (!damageSource.enabled) return;
-
-        if(CompareTag("Enemy") && obj.CompareTag("Enemy"))
-        {
-            return;
-        }
-
-        if (CompareTag("PlayerBody") && !obj.CompareTag("Enemy")) {
-            return;
-        }
-
-        if (CompareTag("Enemy") && !obj.CompareTag("Light")) {
-            return;
-        }
-
-        TakeDamage(damageSource.damage);
-    }
-
     public void TakeDamage(int amount)
     {
-        if (amount <= 0 || CurrentHealth <= 0) 
+        if (amount <= 0 || CurrentHealth <= 0)
         {
             return;
         }
 
-        CurrentHealth--;
+        CurrentHealth -= amount;
 
         Debug.Log($"{gameObject.name} took {amount} damage ({CurrentHealth}/{maxHealth})");
 

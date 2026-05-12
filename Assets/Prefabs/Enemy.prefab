@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damage: 1
-  damageCooldown: 2
+  damageCooldown: 1
   isEnemy: 1
 --- !u!114 &-1007528691691250384
 MonoBehaviour:

@@ -656,18 +656,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 246466920381525493, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
-      propertyPath: wood1Prefab
-      value: 
-      objectReference: {fileID: 4435324103958104613, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
-    - target: {fileID: 246466920381525493, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
-      propertyPath: wood2Prefab
-      value: 
-      objectReference: {fileID: -5641673585478865392, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
-    - target: {fileID: 246466920381525493, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
-      propertyPath: wood3Prefab
-      value: 
-      objectReference: {fileID: 2265311964591123199, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
     - target: {fileID: 6058275335023166237, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.19
@@ -707,14 +695,6 @@ PrefabInstance:
     - target: {fileID: 6058275335023166237, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7732496313702160098, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7996016467779673720, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
-      propertyPath: m_TagString
-      value: Light
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -767,7 +747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   MinCoolDown: 3
   MaxCoolDown: 5
-  limit: 10
+  limit: 1
   enemy: {fileID: 2208267527633454361, guid: 097fdbb44a324534a8b04f5fa68226cb, type: 3}
   EnemySpawnerPoint: {fileID: 1128185649}
   left: -30

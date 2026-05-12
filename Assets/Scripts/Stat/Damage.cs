@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Damage : MonoBehaviour
@@ -26,7 +23,6 @@ public class Damage : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-
         if (health != null)
         {
             health = null;
@@ -38,6 +34,14 @@ public class Damage : MonoBehaviour
     {
         if (health != null)
         {
+            // Safety check: jika object health sudah di-destroy, reset
+            if (health.gameObject == null)
+            {
+                health = null;
+                timeCheck = 0;
+                return;
+            }
+
             timeCheck += Time.deltaTime;
             if (timeCheck >= damageCooldown)
             {
