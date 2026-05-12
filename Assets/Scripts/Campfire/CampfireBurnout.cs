@@ -61,8 +61,7 @@ public class CampfireBurnout : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isLit) return;
-
+        // Tetap jalan walau campfire mati — DepositAllWood() handle relighting
         if (IsPlayer(other))
         {
             DepositAllWood();
@@ -102,7 +101,7 @@ public class CampfireBurnout : MonoBehaviour
 
         if (totalTime > 0f)
         {
-            remainingTime += totalTime;
+            remainingTime = Mathf.Min(remainingTime + totalTime, baseCampfireDuration);
 
             // Kalau campfire sebelumnya mati, hidupkan lagi
             if (!isLit)
