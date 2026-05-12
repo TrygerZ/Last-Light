@@ -187,6 +187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damage: 1
+  damageCooldown: 2
+  isEnemy: 1
 --- !u!114 &-1007528691691250384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +203,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   moveSpeed: 10
   track: 5
+  patrolTime: 3
+  idleTime: 3
+  leftBoundary: -20
+  rightBoundary: 20
+  leftEdge: -1000
+  rightEdge: 1000
 --- !u!114 &-5579545449868085960
 MonoBehaviour:
   m_ObjectHideFlags: 0
