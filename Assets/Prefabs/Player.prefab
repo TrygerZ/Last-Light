@@ -135,7 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d377bd48ee2a8a478e6d8b05a6bcadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  movespeed: 20
+  movespeed: 10
+  animator: {fileID: 6885514735534396150}
 --- !u!95 &6885514735534396150
 Animator:
   serializedVersion: 7
@@ -146,7 +147,7 @@ Animator:
   m_GameObject: {fileID: 34599472558026804}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1ab0391f59e0f634f9baa01a2021810f, type: 2}
+  m_Controller: {fileID: 9100000, guid: bc93cd87cad046b4e92f830a94b488ed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
