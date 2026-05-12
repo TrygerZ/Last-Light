@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Wood3 : MonoBehaviour
 {
-    [SerializeField] private float timeValue = 20f;
+    [SerializeField] private float timeValue = 40f;
+    public float TimeValue => timeValue;
     [SerializeField] private string woodType = "Wood3";
 
     private WoodSpawner spawner;

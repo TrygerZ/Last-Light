@@ -6,8 +6,9 @@ TagManager:
   tags:
   - Enemy
   - PlayerBody
-  - PlayerTorch
   - EnemySpawner
+  - Light
+  - PlayerTorch
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,6 @@ TagManager:
   - Enemy
   - Prop
   - Torch
-  - 
   - 
   - 
   - 
