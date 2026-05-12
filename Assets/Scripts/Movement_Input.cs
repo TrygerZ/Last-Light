@@ -6,6 +6,7 @@ public class Movement_Input : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    public Animator animator;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class Movement_Input : MonoBehaviour
     void Update()
     {
         float moveInput = Input.GetAxis("Horizontal");
+        animator.SetFloat("Speed", Mathf.Abs(moveInput));
         rb.linearVelocity = new Vector2(moveInput * movespeed, rb.linearVelocity.y);
 
         if (moveInput > 0)
