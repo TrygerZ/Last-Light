@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 7732496313702160098}
   - component: {fileID: 739149566551337330}
   - component: {fileID: 8856686067510375976}
+  - component: {fileID: 9123456789012345678}
   m_Layer: 8
   m_Name: Torch
   m_TagString: PlayerTorch
@@ -480,3 +481,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damage: 1
   damageCooldown: 2
+--- !u!114 &9123456789012345678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996016467779673720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f67890123456789abcdef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TorchBurnout
+  maxTorchDuration: 30

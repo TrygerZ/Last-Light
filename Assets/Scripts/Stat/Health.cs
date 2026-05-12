@@ -28,6 +28,7 @@ public class Health : MonoBehaviour
     {
         Damage damageSource = obj.GetComponent<Damage>();
         if (damageSource == null) return;
+        if (!damageSource.enabled) return;
 
         if(CompareTag("Enemy") && obj.CompareTag("Enemy"))
         {
@@ -38,7 +39,7 @@ public class Health : MonoBehaviour
             return;
         }
 
-        if (CompareTag("Enemy") && !obj.CompareTag("PlayerTorch")) {
+        if (CompareTag("Enemy") && !obj.CompareTag("Light")) {
             return;
         }
 
