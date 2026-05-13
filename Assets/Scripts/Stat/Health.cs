@@ -8,10 +8,17 @@ public class Health : MonoBehaviour
     public int CurrentHealth { get; private set; }
     public int MaxHealth => maxHealth;
 
+    private SanityBar sanity;
+
 
     private void Awake()
     {
         CurrentHealth = maxHealth;
+    }
+
+    private void Start()
+    {
+        sanity = GameObject.FindGameObjectWithTag("SanityBar").GetComponent<SanityBar>();
     }
 
     public void TakeDamage(int amount)
@@ -25,11 +32,9 @@ public class Health : MonoBehaviour
 
         Debug.Log($"{gameObject.name} took {amount} damage ({CurrentHealth}/{maxHealth})");
 
-        if (CompareTag("Player"))
+        if (CompareTag("PlayerBody"))
         {
-            SanityBar sanitybar;
-            sanitybar = GameObject.FindGameObjectWithTag("SanityBar").GetComponent<SanityBar>();
-            sanitybar.setHealth(CurrentHealth);
+            sanity.setHealth(CurrentHealth);
         }
 
         if (CurrentHealth <= 0)
