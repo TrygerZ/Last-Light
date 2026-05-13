@@ -656,6 +656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 739149566551337330, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6058275335023166237, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.19
@@ -714,7 +718,7 @@ GameObject:
   - component: {fileID: 708243137}
   - component: {fileID: 708243136}
   m_Layer: 5
-  m_Name: UI
+  m_Name: InGameHUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1131,7 +1135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.445683, y: 10.493705}
+  m_AnchoredPosition: {x: -617, y: 368}
   m_SizeDelta: {x: 635.824, y: 77.124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030706460
@@ -1211,7 +1215,7 @@ GameObject:
   - component: {fileID: 2096713858}
   - component: {fileID: 2096713857}
   m_Layer: 5
-  m_Name: FIll
+  m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
