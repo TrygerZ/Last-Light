@@ -20,11 +20,13 @@ public class EnemyMovement : MonoBehaviour
     private float idleTimer;
     private int patrolDirection;
     private bool isIdle;
+    private SpriteRenderer sprite;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
         if (transform.position.x < leftBoundary)isLeft = true;
     }
 
@@ -84,6 +86,15 @@ public class EnemyMovement : MonoBehaviour
             Vector2 move = new Vector2(patrolDirection, 0);
 
             rb.linearVelocity = move * moveSpeed;
+
+            if (move.x > 0)
+            {
+                sprite.flipX = true;
+            }
+            else if (move.x < 0)
+            {
+                sprite.flipX = false;
+            }
 
             if (patrolTimer >= patrolTime)
             {
