@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 739149566551337330}
   - component: {fileID: 8856686067510375976}
   - component: {fileID: 9123456789012345678}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Torch
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damage: 1
-  damageCooldown: 2
+  damageCooldown: 0
   isEnemy: 0
 --- !u!114 &9123456789012345678
 MonoBehaviour:
