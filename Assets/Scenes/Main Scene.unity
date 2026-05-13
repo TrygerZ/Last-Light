@@ -749,7 +749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   MinCoolDown: 3
   MaxCoolDown: 5
-  limit: 1
+  limit: 10
   enemy: {fileID: 2208267527633454361, guid: 097fdbb44a324534a8b04f5fa68226cb, type: 3}
   EnemySpawnerPoint: {fileID: 1128185649}
   left: -30

@@ -204,11 +204,11 @@ MonoBehaviour:
   moveSpeed: 10
   track: 5
   patrolTime: 3
-  idleTime: 3
+  idleTime: 2
   leftBoundary: -20
   rightBoundary: 20
-  leftEdge: -1000
-  rightEdge: 1000
+  leftEdge: -120
+  rightEdge: 120
 --- !u!114 &-5579545449868085960
 MonoBehaviour:
   m_ObjectHideFlags: 0
