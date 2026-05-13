@@ -171,7 +171,6 @@ MonoBehaviour:
   spawnAreaMax: {x: 120, y: -2.9}
   exclusionXMin: -10
   exclusionXMax: 10
-  spawnWeight: 10
 --- !u!1 &377299071
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +558,6 @@ MonoBehaviour:
   spawnAreaMax: {x: 120, y: -3}
   exclusionXMin: -10
   exclusionXMax: 10
-  spawnWeight: 20
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +654,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 246466920381525493, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
+      propertyPath: maxCapacity
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6058275335023166237, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.19
@@ -747,7 +749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   MinCoolDown: 3
   MaxCoolDown: 5
-  limit: 1
+  limit: 10
   enemy: {fileID: 2208267527633454361, guid: 097fdbb44a324534a8b04f5fa68226cb, type: 3}
   EnemySpawnerPoint: {fileID: 1128185649}
   left: -30
@@ -806,7 +808,6 @@ MonoBehaviour:
   spawnAreaMax: {x: 120, y: -2.5}
   exclusionXMin: -10
   exclusionXMax: 10
-  spawnWeight: 40
 --- !u!1 &1867148943
 GameObject:
   m_ObjectHideFlags: 0

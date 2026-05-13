@@ -18,9 +18,6 @@ public class WoodSpawner : MonoBehaviour
     [SerializeField] private float exclusionXMin = -2f;
     [SerializeField] private float exclusionXMax = 2f;
 
-    [Header("Spawner Type")]
-    [SerializeField, Range(0, 100)] private int spawnWeight = 10;
-
     private float spawnTimer;
     private int currentWoodCount;
 
@@ -49,7 +46,6 @@ public class WoodSpawner : MonoBehaviour
         GameObject newWood = Instantiate(woodPrefab, spawnPos, Quaternion.identity, woodContainer);
         currentWoodCount++;
 
-        // Coba hubungkan ke script wood (Wood1 / Wood2 / Wood3)
         Wood1 wood1 = newWood.GetComponent<Wood1>();
         if (wood1 != null)
         {
@@ -82,15 +78,11 @@ public class WoodSpawner : MonoBehaviour
         float x = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
         float y = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
 
-        // Kalau X masuk exclusion pillar, geser ke tepi terdekat
         if (x >= exclusionXMin && x <= exclusionXMax)
         {
             float jarakKeKiri = x - exclusionXMin;
             float jarakKeKanan = exclusionXMax - x;
-
-            x = (jarakKeKiri < jarakKeKanan)
-                ? exclusionXMin   // geser ke kiri pilar
-                : exclusionXMax;  // geser ke kanan pilar
+            x = (jarakKeKiri < jarakKeKanan) ? exclusionXMin : exclusionXMax;
         }
 
         return new Vector3(x, y, 0f);

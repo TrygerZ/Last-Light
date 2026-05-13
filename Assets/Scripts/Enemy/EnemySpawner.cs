@@ -22,6 +22,7 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         setTimeUntilSpawn();
+        
     }
 
     private void Update()
