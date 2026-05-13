@@ -136,6 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damage: 1
+  damageCooldown: 0
+  isEnemy: 0
 --- !u!114 &4813374097888124185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,9 +232,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1395008559
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6911056676163173146, guid: 701f89020350d8549b7b3a18f5e5cfb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
