@@ -25,6 +25,13 @@ public class Health : MonoBehaviour
 
         Debug.Log($"{gameObject.name} took {amount} damage ({CurrentHealth}/{maxHealth})");
 
+        if (CompareTag("Player"))
+        {
+            SanityBar sanitybar;
+            sanitybar = GameObject.FindGameObjectWithTag("SanityBar").GetComponent<SanityBar>();
+            sanitybar.setHealth(CurrentHealth);
+        }
+
         if (CurrentHealth <= 0)
         {
             Destroy(gameObject);
