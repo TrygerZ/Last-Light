@@ -82,9 +82,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1159939951
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: 1395008559
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6863246505373101655, guid: b0f1f7775bd9a034bafb778cc9bd5727, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -342,6 +342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eee0a0e89594814a8207a52b80fc290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Backpack
+  maxCapacity: 10
+  currentWeight: 0
   wood1Prefab: {fileID: 4435324103958104613, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
   wood2Prefab: {fileID: -5641673585478865392, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
   wood3Prefab: {fileID: 2265311964591123199, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
@@ -403,7 +405,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 000000006f4723457be14189
+  m_ApplyToSortingLayers: 000000002f242653
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -484,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damage: 1
-  damageCooldown: 2
+  damageCooldown: 0
   isEnemy: 0
 --- !u!114 &9123456789012345678
 MonoBehaviour:
