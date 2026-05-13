@@ -8,6 +8,11 @@ public class Damage : MonoBehaviour
     private Health health;
     private float timeCheck;
 
+    private void Awake()
+    {
+        timeCheck = damageCooldown;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Damage otherDamage = collision.GetComponent<Damage>();
@@ -26,7 +31,7 @@ public class Damage : MonoBehaviour
         if (health != null)
         {
             health = null;
-            timeCheck = 0;
+            timeCheck = damageCooldown;
         }
     }
 
@@ -34,7 +39,6 @@ public class Damage : MonoBehaviour
     {
         if (health != null)
         {
-            // Safety check: jika object health sudah di-destroy, reset
             if (health.gameObject == null)
             {
                 health = null;
