@@ -2,23 +2,20 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public GameOver deathScreen;
+
     [Header("Basic Stats")]
     [SerializeField] private int maxHealth;
 
     public int CurrentHealth { get; private set; }
     public int MaxHealth => maxHealth;
 
-    private SanityBar sanity;
+    [SerializeField] SanityBar sanity;
 
 
     private void Awake()
     {
         CurrentHealth = maxHealth;
-    }
-
-    private void Start()
-    {
-        sanity = GameObject.FindGameObjectWithTag("SanityBar").GetComponent<SanityBar>();
     }
 
     public void TakeDamage(int amount)
@@ -39,7 +36,12 @@ public class Health : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
-            Destroy(gameObject);
+            if (CompareTag("PlayerBody"))
+            {
+                deathScreen.setUp();
+                transform.parent.gameObject.SetActive(false);
+            }
+            else Destroy(gameObject);
         }
     }
 }
