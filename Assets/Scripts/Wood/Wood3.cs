@@ -2,8 +2,14 @@ using UnityEngine;
 
 public class Wood3 : MonoBehaviour
 {
+    [Header("Wood Properties")]
     [SerializeField] private float timeValue = 40f;
+    [SerializeField] private float weight = 4f;
+
     public float TimeValue => timeValue;
+    public float Weight => weight;
+
+    [Header("Type Identifier")]
     [SerializeField] private string woodType = "Wood3";
 
     private WoodSpawner spawner;
@@ -55,11 +61,24 @@ public class Wood3 : MonoBehaviour
 
     private void PickUp()
     {
+        if (Backpack.Instance == null)
+            return;
+
+        // Check capacity before picking up
+        if (!Backpack.Instance.CanAddWood(woodType))
+        {
+            Debug.LogWarning($"Cannot pick up {woodType} (weight: {weight}) — backpack full! "
+                + $"({Backpack.Instance.CurrentWeight}/{Backpack.Instance.MaxCapacity})");
+            return;
+        }
+
         isPickedUp = true;
 
-        if (Backpack.Instance != null)
+        bool added = Backpack.Instance.AddWood(woodType);
+        if (!added)
         {
-            Backpack.Instance.AddWood(woodType);
+            isPickedUp = false;
+            return;
         }
 
         if (spawner != null)
