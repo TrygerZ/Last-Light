@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 9089ef66b4a071b49ad51f3054ffeaa3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8423296529003556239
+    second: mc_idle-litTorch-Sheet_0
+  - first:
+      213: -4886965677042348578
+    second: mc_idle-litTorch-Sheet_1
+  - first:
+      213: -8549952582304143318
+    second: mc_idle-litTorch-Sheet_2
+  - first:
+      213: -3475331438127902244
+    second: mc_idle-litTorch-Sheet_3
+  - first:
+      213: 8746926132221259491
+    second: mc_idle-litTorch-Sheet_4
+  - first:
+      213: 3277327173695598531
+    second: mc_idle-litTorch-Sheet_5
+  - first:
+      213: -3595918008314488109
+    second: mc_idle-litTorch-Sheet_6
+  - first:
+      213: -5029194681115032824
+    second: mc_idle-litTorch-Sheet_7
+  - first:
+      213: 6791295322169111754
+    second: mc_idle-litTorch-Sheet_8
+  - first:
+      213: -2259971947244649643
+    second: mc_idle-litTorch-Sheet_9
+  - first:
+      213: -8495625370166986990
+    second: mc_idle-litTorch-Sheet_10
+  - first:
+      213: -5838068068200539854
+    second: mc_idle-litTorch-Sheet_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 7
+        width: 71
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17256f67f607a1b80800000000000000
+      internalID: -8423296529003556239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 7
+        width: 71
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd4d56eb920e2cb0800000000000000
+      internalID: -4886965677042348578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 7
+        width: 71
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28e35d0d67785980800000000000000
+      internalID: -8549952582304143318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 7
+        width: 71
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd193a9587425cfc0800000000000000
+      internalID: -3475331438127902244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 7
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee21ab59f2536970800000000000000
+      internalID: 8746926132221259491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 7
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf6cd053b76b7d20800000000000000
+      internalID: 3277327173695598531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 7
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da1cf89f9bb81ec0800000000000000
+      internalID: -3595918008314488109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 7
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803cad55516b43ab0800000000000000
+      internalID: -5029194681115032824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 7
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac479aa1d178f3e50800000000000000
+      internalID: 6791295322169111754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 7
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5538222ec77f2a0e0800000000000000
+      internalID: -2259971947244649643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 7
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2177662dcb9791a80800000000000000
+      internalID: -8495625370166986990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mc_idle-litTorch-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 7
+        width: 71
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2391b5cf5040bfea0800000000000000
+      internalID: -5838068068200539854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      mc_idle-litTorch-Sheet_0: -8423296529003556239
+      mc_idle-litTorch-Sheet_1: -4886965677042348578
+      mc_idle-litTorch-Sheet_10: -8495625370166986990
+      mc_idle-litTorch-Sheet_11: -5838068068200539854
+      mc_idle-litTorch-Sheet_2: -8549952582304143318
+      mc_idle-litTorch-Sheet_3: -3475331438127902244
+      mc_idle-litTorch-Sheet_4: 8746926132221259491
+      mc_idle-litTorch-Sheet_5: 3277327173695598531
+      mc_idle-litTorch-Sheet_6: -3595918008314488109
+      mc_idle-litTorch-Sheet_7: -5029194681115032824
+      mc_idle-litTorch-Sheet_8: 6791295322169111754
+      mc_idle-litTorch-Sheet_9: -2259971947244649643
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
