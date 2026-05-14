@@ -89,6 +89,51 @@ public class Backpack : MonoBehaviour
         return true;
     }
 
+    public bool RemoveWood(string woodType)
+    {
+        float weight = GetWoodWeight(woodType);
+        if (weight <= 0f) return false;
+
+        bool hasItem = false;
+        switch (woodType)
+        {
+            case "Wood1": hasItem = wood1Count > 0; break;
+            case "Wood2": hasItem = wood2Count > 0; break;
+            case "Wood3": hasItem = wood3Count > 0; break;
+        }
+
+        if (!hasItem)
+        {
+            Debug.LogWarning($"Backpack: No {woodType} to remove!");
+            return false;
+        }
+
+        currentWeight = Mathf.Max(0f, currentWeight - weight);
+
+        switch (woodType)
+        {
+            case "Wood1": wood1Count--; break;
+            case "Wood2": wood2Count--; break;
+            case "Wood3": wood3Count--; break;
+        }
+
+        Debug.Log($"Backpack: {woodType} (-{weight}) removed. "
+            + $"Weight: {currentWeight}/{maxCapacity} | "
+            + $"W1:{wood1Count} W2:{wood2Count} W3:{wood3Count}");
+        return true;
+    }
+
+    public float GetWoodTimeValue(string woodType)
+    {
+        switch (woodType)
+        {
+            case "Wood1": return wood1Prefab != null ? wood1Prefab.TimeValue : 10f;
+            case "Wood2": return wood2Prefab != null ? wood2Prefab.TimeValue : 20f;
+            case "Wood3": return wood3Prefab != null ? wood3Prefab.TimeValue : 40f;
+            default: return 0f;
+        }
+    }
+
     public int GetWoodCount(string woodType)
     {
         switch (woodType)

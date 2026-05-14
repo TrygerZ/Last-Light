@@ -5,6 +5,7 @@ public class TorchBurnout : MonoBehaviour
 {
     [SerializeField] GameObject fireBar;
     private TorchDuration fireScript;
+    [SerializeField] private Animator playerAnimator;
 
     [Header("Settings")]
     [SerializeField] private float maxTorchDuration = 30f;
@@ -63,6 +64,8 @@ public class TorchBurnout : MonoBehaviour
         light2D.intensity = 0f;
         damageComponent.enabled = false;
 
+        if (playerAnimator != null) playerAnimator.SetBool("IsTorchLit", false);
+
         Debug.Log("🔥 Torch has been extinguished! Find a campfire to relight it.");
     }
 
@@ -73,6 +76,8 @@ public class TorchBurnout : MonoBehaviour
         damageComponent.enabled = true;
         light2D.intensity = 1f;
 
+        if (playerAnimator != null) playerAnimator.SetBool("IsTorchLit", true);
+
         Debug.Log("🔥 Torch has been fully refilled!");
     }
 
@@ -81,6 +86,8 @@ public class TorchBurnout : MonoBehaviour
         remainingTime = Mathf.Min(remainingTime + amount, maxTorchDuration);
         isLit = true;
         damageComponent.enabled = true;
+
+        if (playerAnimator != null) playerAnimator.SetBool("IsTorchLit", true);
 
         Debug.Log($"🔥 Torch refilled by {amount}s. Remaining: {remainingTime:F1}s");
     }
