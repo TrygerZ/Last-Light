@@ -2,8 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SanityBar : MonoBehaviour
 {
-    public Slider slider;
-    public Health health;
+    private Slider slider;
+    private Health health;
 
     private void Start()
     {
@@ -16,6 +16,4 @@ public class SanityBar : MonoBehaviour
     {
         slider.value = currenthealth;
     }
-
-
 }
