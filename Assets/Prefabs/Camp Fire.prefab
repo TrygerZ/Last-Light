@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efefb4d3d830f8c438d87b637353fa39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampfireBurnout
-  baseCampfireDuration: 120
+  baseCampfireDuration: 12
   remainingTime: 0
   isLit: 1
 --- !u!1 &8748053427673427089

@@ -130,10 +130,13 @@ public class Backpack : MonoBehaviour
         }
 
         currentWeight = Mathf.Max(0f, currentWeight - weight);
+        capacityText.getCapacity(currentWeight);
 
         switch (woodType)
         {
-            case "Wood1": wood1Count--; break;
+            case "Wood1": wood1Count--;
+            woodText1.textCount(wood1Count);
+            break;
             case "Wood2": wood2Count--; break;
             case "Wood3": wood3Count--; break;
         }
@@ -187,9 +190,13 @@ public class Backpack : MonoBehaviour
 
         // Reset everything
         wood1Count = 0;
+        woodText1.textCount(wood1Count);
         wood2Count = 0;
+        woodText2.textCount(wood2Count);
         wood3Count = 0;
+        woodText3.textCount(wood3Count);
         currentWeight = 0f;
+        capacityText.getCapacity(currentWeight);
 
         return totalTime;
     }
