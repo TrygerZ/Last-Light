@@ -1,8 +1,13 @@
+using TMPro;
 using UnityEngine;
 
 public class Backpack : MonoBehaviour
 {
     public static Backpack Instance { get; private set; }
+
+    public int wood1Count = 0;
+    public int wood2Count = 0;
+    public int wood3Count = 0;
 
     [Header("Capacity Settings")]
     [SerializeField] private float maxCapacity = 10f;
@@ -14,9 +19,16 @@ public class Backpack : MonoBehaviour
     [SerializeField] private Wood2 wood2Prefab;
     [SerializeField] private Wood3 wood3Prefab;
 
-    public int wood1Count = 0;
-    public int wood2Count = 0;
-    public int wood3Count = 0;
+    [Header("ItemHotbar")]
+    [SerializeField] GameObject wood1;
+    [SerializeField] GameObject wood2;
+    [SerializeField] GameObject wood3;
+    [SerializeField] GameObject capacity;
+
+    private ItemAmount woodText1;
+    private ItemAmount woodText2;
+    private ItemAmount woodText3;
+    private CapacityText capacityText;
 
     private float wood1Weight;
     private float wood2Weight;
@@ -38,6 +50,14 @@ public class Backpack : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        woodText1 = wood1.GetComponent<ItemAmount>();
+        woodText2 = wood2.GetComponent<ItemAmount>();
+        woodText3 = wood3.GetComponent<ItemAmount>();
+        capacityText = capacity.GetComponent<CapacityText>();
     }
 
     private void CacheWeightsFromPrefabs()
@@ -75,12 +95,13 @@ public class Backpack : MonoBehaviour
 
         float weight = GetWoodWeight(woodType);
         currentWeight += weight;
+        capacityText.getCapacity(currentWeight);
 
         switch (woodType)
         {
-            case "Wood1": wood1Count++; break;
-            case "Wood2": wood2Count++; break;
-            case "Wood3": wood3Count++; break;
+            case "Wood1": wood1Count++; woodText1.textCount(wood1Count); break;
+            case "Wood2": wood2Count++; woodText2.textCount(wood2Count); break;
+            case "Wood3": wood3Count++; woodText3.textCount(wood3Count); break;
         }
 
         Debug.Log($"Backpack: {woodType} (+{weight}) added. "
