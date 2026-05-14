@@ -25,12 +25,12 @@ public class Movement_Input : MonoBehaviour
         if (moveInput > 0)
         {
             sprite.flipX = true;
-            playerBody.transform.rotation = Quaternion.Euler(0, -156.76f, 0);
+            playerBody.transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (moveInput < 0)
         {
             sprite.flipX = false;
-            playerBody.transform.rotation = Quaternion.identity;
+            playerBody.transform.localScale = new Vector3(1, 1, 1);
         }
     }
 }
