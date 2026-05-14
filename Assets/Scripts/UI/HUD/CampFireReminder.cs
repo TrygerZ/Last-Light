@@ -18,7 +18,7 @@ public class CampFireReminder : MonoBehaviour
     private void Update()
     {
         float timer = campTimeDuration.RemainingTime;
-        if (timer <= reminderTimer)GetComponent<TMP_Text>().enabled = true;
+        if (timer <= reminderTimer && timer != 0)GetComponent<TMP_Text>().enabled = true;
         else GetComponent<TMP_Text>().enabled = false;
     }
 }
