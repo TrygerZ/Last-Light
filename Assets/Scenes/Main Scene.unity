@@ -735,7 +735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 635.82, y: -263}
+  m_AnchoredPosition: {x: 578.9007, y: -312.29095}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &587971656
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587971654}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -1028,10 +1028,10 @@ PrefabInstance:
     - target: {fileID: 797767213322142930, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: sanity
       value: 
-      objectReference: {fileID: 2030706460}
+      objectReference: {fileID: 2030706462}
     - target: {fileID: 797767213322142930, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 797767213322142930, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: deathScreen
@@ -1280,7 +1280,6 @@ GameObject:
   - component: {fileID: 760826517}
   - component: {fileID: 760826520}
   - component: {fileID: 760826519}
-  - component: {fileID: 760826518}
   m_Layer: 5
   m_Name: TorchBarBorder
   m_TagString: Untagged
@@ -1307,19 +1306,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &760826518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760826516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9af2d0e550f5624998e695cc4e02d52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TorchDuration
-  fire: {fileID: 0}
 --- !u!114 &760826519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2578,7 +2564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2030706459}
   - component: {fileID: 2030706461}
-  - component: {fileID: 2030706460}
+  - component: {fileID: 2030706462}
   m_Layer: 5
   m_Name: SanityBar
   m_TagString: SanityBar
@@ -2607,18 +2593,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2030706460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030706458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b23b51810ff2194a826bc30deca5f7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SanityBar
 --- !u!114 &2030706461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2670,6 +2644,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2030706462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030706458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b2843aaa80c02a44a144baff9aecf8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SanityBar
 --- !u!1 &2096713855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,8 +2805,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: [{targetCorrespondingSourceObject: {fileID: 3548370695875669431, guid: 75df43a0869277f47bc050de91c68323, type: 3}, insertIndex: -1, addedObject: {fileID: 1985435120}}]
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3548370695875669431, guid: 75df43a0869277f47bc050de91c68323, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1985435120}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8871946266565818176, guid: 75df43a0869277f47bc050de91c68323, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 75df43a0869277f47bc050de91c68323, type: 3}
 --- !u!1001 &5411832384355858724
 PrefabInstance:
@@ -2938,6 +2930,26 @@ PrefabInstance:
     - target: {fileID: 5380568995778026504, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
       propertyPath: m_Name
       value: Tile Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558532973271875980, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
+      propertyPath: m_TileSpriteArray.Array.data[4].m_RefCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558532973271875980, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
+      propertyPath: m_Tiles.Array.data[23].second.m_TileSpriteIndex
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558532973271875980, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
+      propertyPath: m_Tiles.Array.data[47].second.m_TileSpriteIndex
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558532973271875980, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
+      propertyPath: m_Tiles.Array.data[82].second.m_TileSpriteIndex
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8558532973271875980, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
+      propertyPath: m_Tiles.Array.data[107].second.m_TileSpriteIndex
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
