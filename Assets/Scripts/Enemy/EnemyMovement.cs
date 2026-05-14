@@ -1,3 +1,6 @@
+using System.Runtime.InteropServices.WindowsRuntime;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -40,7 +43,11 @@ public class EnemyMovement : MonoBehaviour
         {
             float distance = Vector2.Distance(transform.position, target.position);
 
-            if (distance > 0.1f && distance < track)
+            if (distance <= 0.1f)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+            else if (distance < track)
             {
                 Vector2 direction = (target.position - transform.position).normalized;
                 rb.linearVelocity = direction * moveSpeed;
@@ -61,10 +68,9 @@ public class EnemyMovement : MonoBehaviour
             idleTimer += Time.fixedDeltaTime;
 
             if (idleTimer >= idleTime)
-            {
-                isIdle = false;
-
+            { 
                 idleTimer = 0;
+                isIdle = false;
 
                 patrolDirection = Random.Range(0, 2) == 0 ? -1 : 1; // for some reason (0,2) means 0 <= random < 2, so only 0 and 1
             }

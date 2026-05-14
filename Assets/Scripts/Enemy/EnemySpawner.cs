@@ -16,8 +16,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float outsideDistance;
 
     private float timeCounter;
-    public int currentSpawn = 0;
     private Vector2 randomSpawn;
+    [Header("How many enemies currently spawned")]
+    [SerializeField] int currentSpawn = 0;
 
     private void Awake()
     {
