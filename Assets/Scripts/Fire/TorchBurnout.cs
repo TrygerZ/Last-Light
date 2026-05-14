@@ -3,6 +3,9 @@ using UnityEngine.Rendering.Universal;
 
 public class TorchBurnout : MonoBehaviour
 {
+    [SerializeField] GameObject fireBar;
+    private TorchDuration fireScript;
+
     [Header("Settings")]
     [SerializeField] private float maxTorchDuration = 30f;
 
@@ -31,6 +34,8 @@ public class TorchBurnout : MonoBehaviour
 
     private void Start()
     {
+        fireScript = fireBar.GetComponent<TorchDuration>();
+
         remainingTime = maxTorchDuration;
     }
 
@@ -39,6 +44,8 @@ public class TorchBurnout : MonoBehaviour
         if (!isLit) return;
 
         remainingTime -= Time.deltaTime;
+        fireScript.setFire(remainingTime);
+
 
         // Lerp light intensity based on remaining time
         light2D.intensity = Mathf.Lerp(0f, 1f, NormalizedTime);
