@@ -173,7 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53fd9850f9c7d704398539e1aede9dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 1
+  deathScreen: {fileID: 0}
+  maxHealth: 10
+  sanity: {fileID: 0}
 --- !u!114 &477220319109710110
 MonoBehaviour:
   m_ObjectHideFlags: 0

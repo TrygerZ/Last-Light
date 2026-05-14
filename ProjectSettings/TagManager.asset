@@ -9,6 +9,7 @@ TagManager:
   - EnemySpawner
   - Light
   - PlayerTorch
+  - SanityBar
   layers:
   - Default
   - TransparentFX
