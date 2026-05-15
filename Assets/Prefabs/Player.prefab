@@ -83,8 +83,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1395008559
-  m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingLayer: 2
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6863246505373101655, guid: b0f1f7775bd9a034bafb778cc9bd5727, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -298,14 +298,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eee0a0e89594814a8207a52b80fc290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Backpack
+  wood1Count: 0
+  wood2Count: 0
+  wood3Count: 0
   maxCapacity: 10
   currentWeight: 0
   wood1Prefab: {fileID: 4435324103958104613, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
   wood2Prefab: {fileID: -5641673585478865392, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
   wood3Prefab: {fileID: 2265311964591123199, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
-  wood1Count: 0
-  wood2Count: 0
-  wood3Count: 0
+  wood1: {fileID: 0}
+  wood2: {fileID: 0}
+  wood3: {fileID: 0}
+  capacity: {fileID: 0}
 --- !u!1 &7996016467779673720
 GameObject:
   m_ObjectHideFlags: 0

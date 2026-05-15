@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efefb4d3d830f8c438d87b637353fa39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampfireBurnout
-  baseCampfireDuration: 12
+  baseCampfireDuration: 20
   remainingTime: 0
   isLit: 1
 --- !u!1 &8748053427673427089
@@ -234,8 +234,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1395008559
-  m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingLayer: 2
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6911056676163173146, guid: 701f89020350d8549b7b3a18f5e5cfb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -352,7 +352,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1395008559
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}

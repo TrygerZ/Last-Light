@@ -24,7 +24,7 @@ public class WinScreen : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main Scene");
+        SceneManager.LoadScene("Scene Utama");
     }
 
     public void MainMenu()
