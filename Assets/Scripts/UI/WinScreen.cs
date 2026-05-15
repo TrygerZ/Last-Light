@@ -3,22 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
+
+    [SerializeField] private int scene;
+    [SerializeField] GameObject fadeObj;
+    private ScreenFadeIn fade;
+
+    private void Start()
+    {
+        fade = fadeObj.GetComponent<ScreenFadeIn>();
+    }
     public void ShowWin()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Win Scene");
+        fade.FadeStart(scene);
         Debug.Log($"🏆 PLAYER MENANG! Loading scene: Win Scene");
-    }
-
-    public void Restart()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Main Scene");
-    }
-
-    public void MainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Main Menu");
     }
 }
