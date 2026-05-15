@@ -84,7 +84,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1395008559
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 297761703447499198, guid: 27de8a4d9cdc2bf439dd748a0b14b026, type: 3}
@@ -209,8 +209,8 @@ MonoBehaviour:
   idleTime: 2
   leftBoundary: -20
   rightBoundary: 20
-  leftEdge: -120
-  rightEdge: 120
+  leftEdge: -150
+  rightEdge: 150
 --- !u!114 &-5579545449868085960
 MonoBehaviour:
   m_ObjectHideFlags: 0
