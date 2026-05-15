@@ -6537,6 +6537,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4813374097888124185, guid: 75df43a0869277f47bc050de91c68323, type: 3}
+      propertyPath: torchRefillRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8748053427673427089, guid: 75df43a0869277f47bc050de91c68323, type: 3}
       propertyPath: m_Name
       value: Camp Fire
