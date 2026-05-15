@@ -18,6 +18,17 @@ public class WoodSpawner : MonoBehaviour
     [SerializeField] private float exclusionXMin = -2f;
     [SerializeField] private float exclusionXMax = 2f;
 
+    [Header("Zone Distribution (Weighted Random per Wood Type)")]
+    [Tooltip("Probabilities for Wood1, Wood2, Wood3 spawn. Must add up to 100. Example: 60,30,10")]
+    [SerializeField] private int wood1Weight = 60;
+    [SerializeField] private int wood2Weight = 30;
+    [SerializeField] private int wood3Weight = 10;
+
+    [Header("Wood Prefabs (assign all 3 for zone spawning)")]
+    [SerializeField] private GameObject wood1Prefab;
+    [SerializeField] private GameObject wood2Prefab;
+    [SerializeField] private GameObject wood3Prefab;
+
     private float spawnTimer;
     private int currentWoodCount;
 
@@ -33,7 +44,7 @@ public class WoodSpawner : MonoBehaviour
         if (currentWoodCount >= maxWoodCount)
             return;
 
-        if (woodPrefab == null || woodContainer == null)
+        if (woodContainer == null)
             return;
 
         SpawnWood();
@@ -43,28 +54,40 @@ public class WoodSpawner : MonoBehaviour
     {
         Vector3 spawnPos = GetValidSpawnPosition();
 
-        GameObject newWood = Instantiate(woodPrefab, spawnPos, Quaternion.identity, woodContainer);
+        // Determine which wood type to spawn based on weighted random
+        GameObject prefabToSpawn = GetWeightedWoodPrefab();
+        if (prefabToSpawn == null)
+            prefabToSpawn = woodPrefab; // fallback to default
+        if (prefabToSpawn == null)
+            return;
+
+        GameObject newWood = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity, woodContainer);
         currentWoodCount++;
 
+        // Set spawner reference on whichever wood type was spawned
         Wood1 wood1 = newWood.GetComponent<Wood1>();
-        if (wood1 != null)
-        {
-            wood1.SetSpawner(this);
-            return;
-        }
+        if (wood1 != null) { wood1.SetSpawner(this); return; }
 
         Wood2 wood2 = newWood.GetComponent<Wood2>();
-        if (wood2 != null)
-        {
-            wood2.SetSpawner(this);
-            return;
-        }
+        if (wood2 != null) { wood2.SetSpawner(this); return; }
 
         Wood3 wood3 = newWood.GetComponent<Wood3>();
-        if (wood3 != null)
-        {
-            wood3.SetSpawner(this);
-        }
+        if (wood3 != null) { wood3.SetSpawner(this); }
+    }
+
+    private GameObject GetWeightedWoodPrefab()
+    {
+        int totalWeight = wood1Weight + wood2Weight + wood3Weight;
+        if (totalWeight <= 0) return woodPrefab;
+
+        int roll = Random.Range(0, totalWeight);
+
+        if (roll < wood1Weight)
+            return wood1Prefab != null ? wood1Prefab : woodPrefab;
+        else if (roll < wood1Weight + wood2Weight)
+            return wood2Prefab != null ? wood2Prefab : woodPrefab;
+        else
+            return wood3Prefab != null ? wood3Prefab : woodPrefab;
     }
 
     public void OnWoodPickedUp()
