@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
-
-
     public void ShowWin()
     {
         Time.timeScale = 1f;

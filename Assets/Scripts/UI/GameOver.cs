@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem.HID;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {

@@ -7,11 +7,8 @@ public class CampfireBurnout : MonoBehaviour
     [SerializeField] private float baseCampfireDuration = 120f;
 
     [Header("Gradual Refill Settings")]
-    [Tooltip("Torch refill per second (e.g. 5 = fills 30s torch in 6 seconds)")]
     [SerializeField] private float torchRefillRate = 5f;
-    [Tooltip("Health heal per second")]
     [SerializeField] private int healthHealRate = 2;
-    [Tooltip("How often to apply refill/heal (seconds). Lower = smoother.")]
     [SerializeField] private float refillInterval = 0.25f;
 
     [Header("Debug (Readonly)")]
@@ -45,14 +42,11 @@ public class CampfireBurnout : MonoBehaviour
         remainingTime = baseCampfireDuration;
     }
 
-
     private void Update()
     {
         if (!isLit) return;
 
         remainingTime -= Time.deltaTime;
-
-        // Lerp light intensity based on remaining time
         light2D.intensity = Mathf.Lerp(0f, 1f, NormalizedTime);
 
         if (remainingTime <= 0f)
@@ -60,7 +54,6 @@ public class CampfireBurnout : MonoBehaviour
             Extinguish();
         }
 
-        // Gradual refill runs in Update() so it works even when Rigidbody2D sleeps
         if (playerInRange && playerRoot != null)
         {
             refillTimer += Time.deltaTime;
@@ -86,12 +79,10 @@ public class CampfireBurnout : MonoBehaviour
     {
         if (!IsPlayer(other)) return;
 
-        // Store player root reference for Update() refill
         playerRoot = other.transform.root;
         playerInRange = true;
         refillTimer = 0f;
 
-        // Deposit all wood (works even when campfire is dead)
         DepositAllWood();
     }
 
@@ -123,14 +114,12 @@ public class CampfireBurnout : MonoBehaviour
         Backpack backpack = Backpack.Instance;
         if (backpack == null) return;
 
-        // Hitung total waktu dari semua kayu di inventory
         float totalTime = backpack.DepositAllToCampfire();
 
         if (totalTime > 0f)
         {
             remainingTime = Mathf.Min(remainingTime + totalTime, baseCampfireDuration);
 
-            // Kalau campfire sebelumnya mati, hidupkan lagi
             if (!isLit)
             {
                 isLit = true;
@@ -144,7 +133,6 @@ public class CampfireBurnout : MonoBehaviour
 
     private void GradualRefill(Transform root)
     {
-        // 1. Refill torch secara gradual
         TorchBurnout torch = root.GetComponentInChildren<TorchBurnout>();
         if (torch != null)
         {
@@ -152,7 +140,6 @@ public class CampfireBurnout : MonoBehaviour
             torch.RefillTorch(refillAmount);
         }
 
-        // 2. Heal health secara gradual
         Health health = root.GetComponentInChildren<Health>();
         if (health != null && health.CurrentHealth < health.MaxHealth)
         {

@@ -1,6 +1,3 @@
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -24,7 +21,6 @@ public class EnemyMovement : MonoBehaviour
     private int patrolDirection;
     private bool isIdle;
     private SpriteRenderer sprite;
-
 
     private void Awake()
     {
@@ -60,7 +56,6 @@ public class EnemyMovement : MonoBehaviour
     }
     private void patrol()
     {
-
         if (isIdle)
         {
             rb.linearVelocity = Vector2.zero;
@@ -72,7 +67,7 @@ public class EnemyMovement : MonoBehaviour
                 idleTimer = 0;
                 isIdle = false;
 
-                patrolDirection = Random.Range(0, 2) == 0 ? -1 : 1; // for some reason (0,2) means 0 <= random < 2, so only 0 and 1
+                patrolDirection = Random.Range(0, 2) == 0 ? -1 : 1;
             }
         }
         else
@@ -105,7 +100,6 @@ public class EnemyMovement : MonoBehaviour
             if (patrolTimer >= patrolTime)
             {
                 patrolTimer = 0;
-
                 isIdle = true;
             }
         }

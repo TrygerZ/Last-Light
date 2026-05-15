@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class WinLightEffect : MonoBehaviour
 {
@@ -7,9 +8,7 @@ public class WinLightEffect : MonoBehaviour
     [SerializeField] private Light2D targetLight;
 
     [Header("Timing")]
-    [Tooltip("Delay before light effect starts (for fadeout)")]
     [SerializeField] private float fadeOutDelay = 0.5f;
-    [Tooltip("How long the light animation lasts")]
     [SerializeField] private float effectDuration = 3f;
 
     [Header("Intensity Animation")]
@@ -17,10 +16,11 @@ public class WinLightEffect : MonoBehaviour
     [SerializeField] private float intensityEnd = 5f;
 
     [Header("Falloff Animation")]
-    [Tooltip("Falloff starts at this value (1=very soft/wide, 0=hard/sharp)")]
     [SerializeField] private float falloffStart = 1f;
-    [Tooltip("Falloff ends at this value")]
     [SerializeField] private float falloffEnd = 0f;
+
+    [Header("Scene Transition")]
+    [SerializeField] private float sceneTransitionDelay = 10f;
 
     private bool hasPlayed;
 
@@ -38,7 +38,6 @@ public class WinLightEffect : MonoBehaviour
 
     private void Start()
     {
-        // Auto-play when WinScene loads
         PlayEffect();
     }
 
@@ -57,10 +56,8 @@ public class WinLightEffect : MonoBehaviour
             yield break;
         }
 
-        // Step 1: Wait for fadeout
         yield return new WaitForSecondsRealtime(fadeOutDelay);
 
-        // Step 2: Animate light
         float elapsed = 0f;
 
         while (elapsed < effectDuration)
@@ -68,22 +65,21 @@ public class WinLightEffect : MonoBehaviour
             elapsed += Time.unscaledDeltaTime;
             float t = Mathf.Clamp01(elapsed / effectDuration);
 
-            // Smooth step interpolation
             float smoothT = t * t * (3f - 2f * t);
 
-            // Animate intensity
             targetLight.intensity = Mathf.Lerp(intensityStart, intensityEnd, smoothT);
-
-            // Animate falloff: 1 (soft/wide) → 0 (hard/sharp)
             targetLight.falloffIntensity = Mathf.Lerp(falloffStart, falloffEnd, smoothT);
 
             yield return null;
         }
 
-        // Step 3: Final values
         targetLight.intensity = intensityEnd;
         targetLight.falloffIntensity = falloffEnd;
 
         Debug.Log("✨ Win light effect complete!");
+
+        yield return new WaitForSecondsRealtime(sceneTransitionDelay);
+
+        SceneManager.LoadScene("Main Menu");
     }
 }

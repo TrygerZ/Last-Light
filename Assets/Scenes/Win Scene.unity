@@ -1008,6 +1008,7 @@ MonoBehaviour:
   intensityEnd: 100
   falloffStart: 1
   falloffEnd: 0
+  sceneTransitionDelay: 7
 --- !u!50 &1214954754427509004
 Rigidbody2D:
   serializedVersion: 5

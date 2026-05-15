@@ -36,7 +36,6 @@ public class TorchBurnout : MonoBehaviour
     private void Start()
     {
         fireScript = fireBar.GetComponent<TorchDuration>();
-
         remainingTime = maxTorchDuration;
     }
 
@@ -47,8 +46,6 @@ public class TorchBurnout : MonoBehaviour
         remainingTime -= Time.deltaTime;
         fireScript.setFire(remainingTime);
 
-
-        // Lerp light intensity based on remaining time
         light2D.intensity = Mathf.Lerp(0f, 1f, NormalizedTime);
 
         if (remainingTime <= 0f)
