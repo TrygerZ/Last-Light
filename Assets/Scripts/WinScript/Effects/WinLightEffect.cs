@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class WinLightEffect : MonoBehaviour
 {
+    [SerializeField] private GameObject fadeObj;
+    private ScreenFadeIn fadeIn;
+    [SerializeField] private int Scene;
+
     [Header("Light Reference")]
     [SerializeField] private Light2D targetLight;
 
@@ -38,6 +42,7 @@ public class WinLightEffect : MonoBehaviour
 
     private void Start()
     {
+        fadeIn = fadeObj.GetComponent<ScreenFadeIn>();
         PlayEffect();
     }
 
@@ -80,6 +85,6 @@ public class WinLightEffect : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(sceneTransitionDelay);
 
-        SceneManager.LoadScene("Main Menu");
+        fadeIn.FadeStart(Scene);
     }
 }
