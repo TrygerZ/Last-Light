@@ -1,18 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class ScreenFade : MonoBehaviour
+public class ScreenFadeIn : MonoBehaviour
 {
     [SerializeField] Image fadeImage;
-    [SerializeField] float fadeDuration;
+    public float fadeDuration;
 
-    private void Start()
+    public void FadeStart(int scene)
     {
-        StartCoroutine(FadeIn());
+        gameObject.SetActive(true);
+        StartCoroutine(FadeIn(scene));
     }
 
-    IEnumerator FadeIn()
+    IEnumerator FadeIn(int scene)
     {
         float timer = 0f;
 
@@ -22,14 +24,15 @@ public class ScreenFade : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            color.a = 1 - (timer / fadeDuration);
+            color.a = timer / fadeDuration;
 
             fadeImage.color = color;
 
             yield return null;
         }
 
-        color.a = 0;
+        color.a = 1;
         fadeImage.color = color;
+        SceneManager.LoadScene(scene);
     }
 }
