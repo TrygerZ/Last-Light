@@ -13,6 +13,10 @@ public class CampfireBurnout : MonoBehaviour
     [SerializeField] private int healthHealRate = 1;
     [SerializeField] private float refillInterval = 0.25f;
 
+    [Header("Animation")]
+    [Tooltip("Assign campfire Animator. Use SetBool('IsLit', true/false) for lit/extinguished states.")]
+    [SerializeField] private Animator campfireAnimator;
+
     [Header("Debug (Readonly)")]
     [SerializeField] private float remainingTime;
     [SerializeField] private bool isLit = true;
@@ -74,6 +78,9 @@ public class CampfireBurnout : MonoBehaviour
         light2D.intensity = 0f;
         damageComponent.enabled = false;
 
+        if (campfireAnimator != null)
+            campfireAnimator.SetBool("IsLit", false);
+
         Debug.Log("🔥🔥 Campfire has been extinguished! Bring wood to relight it.");
     }
 
@@ -127,6 +134,9 @@ public class CampfireBurnout : MonoBehaviour
                 isLit = true;
                 damageComponent.enabled = true;
                 light2D.intensity = 1f;
+
+                if (campfireAnimator != null)
+                    campfireAnimator.SetBool("IsLit", true);
             }
 
             Debug.Log($"🔥 Campfire received {totalTime}s of fuel from all wood!");
