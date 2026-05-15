@@ -12,14 +12,11 @@ public class MoonTimer : MonoBehaviour
     [SerializeField] private float totalDuration = 300f;
 
     [Header("Movement")]
-    [Tooltip("Fraction of camera width from edges as padding (0.0-1.0). 0.1 = 10%.")]
     [SerializeField] private float horizontalPaddingFraction = 0.1f;
-    [Tooltip("How high the moon arcs upward from center (in world units). 0 = straight horizontal line.")]
     [SerializeField] private float arcHeight = 2f;
 
     [Header("Debug (Readonly)")]
     [SerializeField] private float remainingTime;
-    [Tooltip("1.0 = full time left, 0.0 = time's up")]
     [SerializeField] private float normalizedTime;
     [SerializeField] private bool isFinished;
 
@@ -46,7 +43,6 @@ public class MoonTimer : MonoBehaviour
         if (mainCamera == null)
             mainCamera = Camera.main;
 
-        // Set initial Z so moon is visible in front of camera
         Vector3 startPos = moonTransform.localPosition;
         startPos.z = 10f;
         moonTransform.localPosition = startPos;
@@ -68,7 +64,6 @@ public class MoonTimer : MonoBehaviour
         remainingTime -= Time.deltaTime;
         normalizedTime = Mathf.Clamp01(remainingTime / totalDuration);
 
-        // Moon moves from LEFT (normalized=1) to RIGHT (normalized=0)
         SetMoonPosition(1f - normalizedTime);
 
         if (remainingTime <= 0f && !isFinished)
@@ -89,16 +84,13 @@ public class MoonTimer : MonoBehaviour
     {
         if (mainCamera == null) return;
 
-        // Camera viewport size in world units
         float cameraHeight = 2f * mainCamera.orthographicSize;
         float cameraWidth = cameraHeight * mainCamera.aspect;
 
-        // Horizontal bounds with padding
         float hPadding = cameraWidth * horizontalPaddingFraction;
         leftBound = -(cameraWidth * 0.5f) + hPadding;
         rightBound = (cameraWidth * 0.5f) - hPadding;
 
-        // Moon stays at vertical center
         centerY = 0f;
 
         Debug.Log($"MoonTimer: Camera {cameraWidth:F1}x{cameraHeight:F1}, "
@@ -107,13 +99,7 @@ public class MoonTimer : MonoBehaviour
 
     private void SetMoonPosition(float t)
     {
-        // X: linear from left → right at center height
         float xPos = Mathf.Lerp(leftBound, rightBound, t);
-
-        // Y: parabola on top of center Y
-        //   t=0   → centerY + 0       = center (start)
-        //   t=0.5 → centerY + arcHeight (peak)
-        //   t=1   → centerY + 0       = center (finish)
         float yPos = centerY + (-4f * arcHeight * (t * (t - 1f)));
 
         Vector3 pos = moonTransform.localPosition;

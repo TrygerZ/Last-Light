@@ -188,7 +188,6 @@ public class Backpack : MonoBehaviour
                 + $"= +{totalTime}s fuel. Weight cleared: {currentWeight}");
         }
 
-        // Reset everything
         wood1Count = 0;
         woodText1.textCount(wood1Count);
         wood2Count = 0;

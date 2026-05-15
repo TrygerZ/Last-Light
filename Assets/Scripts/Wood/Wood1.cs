@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Wood1 : MonoBehaviour
@@ -65,7 +64,6 @@ public class Wood1 : MonoBehaviour
         if (Backpack.Instance == null)
             return;
 
-        // Check capacity before picking up
         if (!Backpack.Instance.CanAddWood(woodType))
         {
             Debug.LogWarning($"Cannot pick up {woodType} (weight: {weight}) — backpack full! "

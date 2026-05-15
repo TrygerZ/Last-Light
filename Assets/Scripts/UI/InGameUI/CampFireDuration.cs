@@ -1,4 +1,3 @@
-using System.Threading;
 using TMPro;
 using UnityEngine;
 
@@ -7,7 +6,6 @@ public class CampFireDuration : MonoBehaviour
     [SerializeField] GameObject campFire;
     private CampfireBurnout campTimeDuration;
     private TMP_Text torchDurationText;
-
 
     private void Start()
     {
@@ -27,5 +25,4 @@ public class CampFireDuration : MonoBehaviour
             torchDurationText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
     }
-
 }

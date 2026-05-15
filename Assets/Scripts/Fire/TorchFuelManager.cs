@@ -12,7 +12,6 @@ public class TorchFuelManager : MonoBehaviour
 
     private void Awake()
     {
-        // Auto-resolve references if not set in Inspector
         if (torchBurnout == null)
             torchBurnout = GetComponentInChildren<TorchBurnout>();
 
@@ -30,7 +29,6 @@ public class TorchFuelManager : MonoBehaviour
 
     private void TryConsumeWoodForTorch()
     {
-        // Validate references
         if (backpack == null)
         {
             Debug.LogWarning("TorchFuelManager: Backpack reference is missing!");
@@ -43,14 +41,12 @@ public class TorchFuelManager : MonoBehaviour
             return;
         }
 
-        // Check if player has Wood1 in backpack
         if (backpack.GetWoodCount(woodType) <= 0)
         {
             Debug.Log($"TorchFuelManager: No {woodType} available in backpack to consume!");
             return;
         }
 
-        // Get the time value this wood provides
         float timeValue = backpack.GetWoodTimeValue(woodType);
         if (timeValue <= 0f)
         {
@@ -58,7 +54,6 @@ public class TorchFuelManager : MonoBehaviour
             return;
         }
 
-        // Remove the wood from backpack (reduces count + weight)
         bool removed = backpack.RemoveWood(woodType);
         if (!removed)
         {
@@ -66,7 +61,6 @@ public class TorchFuelManager : MonoBehaviour
             return;
         }
 
-        // Add fuel to torch
         torchBurnout.RefillTorch(timeValue);
 
         Debug.Log($"TorchFuelManager: Consumed 1 {woodType} → added {timeValue}s to torch. " +

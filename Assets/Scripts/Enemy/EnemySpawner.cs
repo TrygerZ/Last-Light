@@ -23,7 +23,6 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         setTimeUntilSpawn();
-        
     }
 
     private void Update()
@@ -74,5 +73,4 @@ public class EnemySpawner : MonoBehaviour
     {
         currentSpawn -= count;
     }
-    
 }
