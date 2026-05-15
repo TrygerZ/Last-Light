@@ -9,7 +9,7 @@ public class CampfireBurnout : MonoBehaviour
     [SerializeField] private float startingTime = 60f;
 
     [Header("Gradual Refill Settings")]
-    [SerializeField] private float torchRefillRate = 2.5f;
+    [SerializeField] private float torchRefillRate = 5f;
     [SerializeField] private int healthHealRate = 1;
     [SerializeField] private float refillInterval = 0.25f;
 
