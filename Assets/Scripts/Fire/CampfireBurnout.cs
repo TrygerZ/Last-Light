@@ -6,11 +6,23 @@ public class CampfireBurnout : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float baseCampfireDuration = 120f;
 
+    [Header("Gradual Refill Settings")]
+    [Tooltip("Torch refill per second (e.g. 5 = fills 30s torch in 6 seconds)")]
+    [SerializeField] private float torchRefillRate = 5f;
+    [Tooltip("Health heal per second")]
+    [SerializeField] private int healthHealRate = 2;
+    [Tooltip("How often to apply refill/heal (seconds). Lower = smoother.")]
+    [SerializeField] private float refillInterval = 0.25f;
+
     [Header("Debug (Readonly)")]
     [SerializeField] private float remainingTime;
     [SerializeField] private bool isLit = true;
     private Light2D light2D;
     private Damage damageComponent;
+
+    private float refillTimer;
+    private bool playerInRange;
+    private Transform playerRoot;
 
     public bool IsLit => isLit;
     public float RemainingTime => remainingTime;
@@ -47,6 +59,17 @@ public class CampfireBurnout : MonoBehaviour
         {
             Extinguish();
         }
+
+        // Gradual refill runs in Update() so it works even when Rigidbody2D sleeps
+        if (playerInRange && playerRoot != null)
+        {
+            refillTimer += Time.deltaTime;
+            if (refillTimer >= refillInterval)
+            {
+                refillTimer = 0f;
+                GradualRefill(playerRoot);
+            }
+        }
     }
 
     private void Extinguish()
@@ -61,20 +84,24 @@ public class CampfireBurnout : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Tetap jalan walau campfire mati — DepositAllWood() handle relighting
-        if (IsPlayer(other))
-        {
-            DepositAllWood();
-        }
+        if (!IsPlayer(other)) return;
+
+        // Store player root reference for Update() refill
+        playerRoot = other.transform.root;
+        playerInRange = true;
+        refillTimer = 0f;
+
+        // Deposit all wood (works even when campfire is dead)
+        DepositAllWood();
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (!isLit) return;
-
         if (IsPlayer(other))
         {
-            RefillPlayerTorch(other);
+            playerInRange = false;
+            playerRoot = null;
+            refillTimer = 0f;
         }
     }
 
@@ -115,12 +142,23 @@ public class CampfireBurnout : MonoBehaviour
         }
     }
 
-    private void RefillPlayerTorch(Collider2D other)
+    private void GradualRefill(Transform root)
     {
-        TorchBurnout torch = other.transform.root.GetComponentInChildren<TorchBurnout>();
+        // 1. Refill torch secara gradual
+        TorchBurnout torch = root.GetComponentInChildren<TorchBurnout>();
         if (torch != null)
         {
-            torch.RefillFull();
+            float refillAmount = torchRefillRate * refillInterval;
+            torch.RefillTorch(refillAmount);
+        }
+
+        // 2. Heal health secara gradual
+        Health health = root.GetComponentInChildren<Health>();
+        if (health != null && health.CurrentHealth < health.MaxHealth)
+        {
+            int healAmount = Mathf.RoundToInt(healthHealRate * refillInterval);
+            if (healAmount < 1) healAmount = 1;
+            health.Heal(healAmount);
         }
     }
 }
