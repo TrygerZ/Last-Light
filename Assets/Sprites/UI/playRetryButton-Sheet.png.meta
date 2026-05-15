@@ -112,12 +112,12 @@ TextureImporter:
       name: playRetryButton-Sheet_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 35
-        width: 74
-        height: 27
+        x: 4
+        y: 36
+        width: 72
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: playRetryButton-Sheet_1
       rect:
         serializedVersion: 2
-        x: 83
-        y: 35
-        width: 74
-        height: 27
+        x: 84
+        y: 36
+        width: 72
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -157,18 +157,18 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3
-        width: 79
-        height: 27
+        y: 4
+        width: 78
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 50eed257ebfa0cdf0800000000000000
+      spriteID: d864298f9b84a0e43a1aebe60ed32d3a
       internalID: -161936354040746491
       vertices: []
       indices: 
@@ -178,19 +178,19 @@ TextureImporter:
       name: playRetryButton-Sheet_3
       rect:
         serializedVersion: 2
-        x: 79
-        y: 3
-        width: 80
-        height: 27
+        x: 80
+        y: 4
+        width: 78
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fdf12f3e4b5d58d20800000000000000
+      spriteID: 632a95bc4a09e6d44b472deb8389a9db
       internalID: 3280262876504399839
       vertices: []
       indices: 
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b8850647a8e6e154ba167d41a6451555
     internalID: 0
     vertices: []
     indices: 
@@ -208,7 +208,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       playRetryButton-Sheet_0: 7726776896528128150
       playRetryButton-Sheet_1: 1489884493566876397
