@@ -44,4 +44,21 @@ public class Health : MonoBehaviour
             else Destroy(gameObject);
         }
     }
+
+    public void Heal(int amount)
+    {
+        if (amount <= 0 || CurrentHealth >= maxHealth)
+        {
+            return;
+        }
+
+        CurrentHealth = Mathf.Min(CurrentHealth + amount, maxHealth);
+
+        Debug.Log($"{gameObject.name} healed +{amount} ({CurrentHealth}/{maxHealth})");
+
+        if (CompareTag("PlayerBody"))
+        {
+            sanity.setHealth(CurrentHealth);
+        }
+    }
 }
