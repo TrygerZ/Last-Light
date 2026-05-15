@@ -36,7 +36,6 @@
   <Project Path="Unity.Cinemachine.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.Runtime.csproj" />
   <Project Path="Unity.Burst.CodeGen.csproj" />
-  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.InputSystem.csproj" />
   <Project Path="Unity.AI.Assistant.Editor.csproj" />
   <Project Path="Unity.VisualScripting.Flow.csproj" />
@@ -59,7 +58,6 @@
   <Project Path="ScriptablePacker.csproj" />
   <Project Path="Unity.Rider.Editor.csproj" />
   <Project Path="Unity.AI.Generators.IO.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.InternalAPIEditorBridge.001.csproj" />
   <Project Path="HFDownloader.csproj" />
   <Project Path="Unity.VisualScripting.State.Editor.csproj" />
@@ -87,6 +85,7 @@
   <Project Path="Unity.Multiplayer.Center.Common.csproj" />
   <Project Path="Unity.UnifiedRayTracing.Runtime.csproj" />
   <Project Path="glTFast.Documentation.Examples.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.2D.Tilemap.Extras.Editor.csproj" />
   <Project Path="Unity.2D.Sprite.Editor.csproj" />
   <Project Path="Unity.AppUI.Navigation.csproj" />
