@@ -80,8 +80,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1395008559
-  m_SortingLayer: 1
-  m_SortingOrder: 3
+  m_SortingLayer: 2
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4331680122012199884, guid: 7296ebb536c5bbc45a3fc4e43de41377, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -161,6 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4cef544ad8d49f498977faf453cefb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Wood2
-  timeValue: 20
+  timeValue: 25
   weight: 2
   woodType: Wood2

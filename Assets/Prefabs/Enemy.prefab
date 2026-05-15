@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   deathScreen: {fileID: 0}
-  maxHealth: 10
+  maxHealth: 100
   sanity: {fileID: 0}
 --- !u!114 &477220319109710110
 MonoBehaviour:
@@ -188,8 +188,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c238d419bf5f049bb9e1ec0a7ede69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
-  damage: 1
-  damageCooldown: 1
+  damage: 20
+  damageCooldown: 1.5
+  invulnerabilityDuration: 0.5
   isEnemy: 1
 --- !u!114 &-1007528691691250384
 MonoBehaviour:
@@ -203,8 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd0b96f065b78e4794b8f561d4a4b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  moveSpeed: 10
-  track: 5
+  moveSpeed: 3
+  track: 10
   patrolTime: 3
   idleTime: 2
   leftBoundary: -20

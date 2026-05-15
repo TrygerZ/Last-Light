@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d377bd48ee2a8a478e6d8b05a6bcadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  movespeed: 10
+  movespeed: 4
   animator: {fileID: 6885514735534396150}
 --- !u!95 &6885514735534396150
 Animator:
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   deathScreen: {fileID: 0}
-  maxHealth: 2
+  maxHealth: 100
   sanity: {fileID: 0}
 --- !u!114 &246466920381525493
 MonoBehaviour:
@@ -386,8 +386,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.5
-  m_PointLightOuterRadius: 3
+  m_PointLightInnerRadius: 2
+  m_PointLightOuterRadius: 4
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -433,7 +433,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.68
+  m_Radius: 1
 --- !u!114 &8856686067510375976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,8 +446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c238d419bf5f049bb9e1ec0a7ede69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
-  damage: 1
-  damageCooldown: 0
+  damage: 20
+  damageCooldown: 1
+  invulnerabilityDuration: 0.5
   isEnemy: 0
 --- !u!114 &9123456789012345678
 MonoBehaviour:
@@ -482,3 +483,4 @@ MonoBehaviour:
   backpack: {fileID: 246466920381525493}
   consumeKey: 113
   woodType: Wood1
+  wood1TorchFuelValue: 5

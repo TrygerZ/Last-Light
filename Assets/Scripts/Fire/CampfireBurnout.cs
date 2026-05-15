@@ -5,10 +5,12 @@ public class CampfireBurnout : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private float baseCampfireDuration = 120f;
+    [Tooltip("Starting timer value (campfire starts partially burned). Default: 60s = 1 minute.")]
+    [SerializeField] private float startingTime = 60f;
 
     [Header("Gradual Refill Settings")]
-    [SerializeField] private float torchRefillRate = 5f;
-    [SerializeField] private int healthHealRate = 2;
+    [SerializeField] private float torchRefillRate = 2.5f;
+    [SerializeField] private int healthHealRate = 1;
     [SerializeField] private float refillInterval = 0.25f;
 
     [Header("Debug (Readonly)")]
@@ -39,7 +41,7 @@ public class CampfireBurnout : MonoBehaviour
 
     private void Start()
     {
-        remainingTime = baseCampfireDuration;
+        remainingTime = Mathf.Min(startingTime, baseCampfireDuration);
     }
 
     private void Update()

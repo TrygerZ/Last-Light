@@ -22,6 +22,14 @@ public class EnemyMovement : MonoBehaviour
     private bool isIdle;
     private SpriteRenderer sprite;
 
+    [Header("Phase-Based Speed (Hardcoded)")]
+    [SerializeField] private MoonTimer moonTimer;
+    [SerializeField] private float speedAwal = 3f;
+    [SerializeField] private float speedTengah = 3.6f;
+    [SerializeField] private float speedAkhir = 4.2f;
+
+    private float currentMoveSpeed;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,9 +40,31 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        
+        if (moonTimer == null)
+            moonTimer = FindFirstObjectByType<MoonTimer>();
+            
+        currentMoveSpeed = moveSpeed;
     }
+
+    private void UpdatePhaseSpeed()
+    {
+        if (moonTimer == null) { currentMoveSpeed = moveSpeed; return; }
+
+        float elapsed = moonTimer.TotalDuration - moonTimer.RemainingTime;
+
+        if (elapsed <= 60f)           // 00:00 - 01:00 → Awal
+            currentMoveSpeed = speedAwal;
+        else if (elapsed <= 180f)     // 01:01 - 03:00 → Tengah
+            currentMoveSpeed = speedTengah;
+        else                          // 03:01 - 05:00 → Akhir
+            currentMoveSpeed = speedAkhir;
+    }
+
     private void FixedUpdate()
     {
+        UpdatePhaseSpeed();
+
         if (target)
         {
             float distance = Vector2.Distance(transform.position, target.position);
@@ -46,7 +76,7 @@ public class EnemyMovement : MonoBehaviour
             else if (distance < track)
             {
                 Vector2 direction = (target.position - transform.position).normalized;
-                rb.linearVelocity = direction * moveSpeed;
+                rb.linearVelocity = direction * currentMoveSpeed;
             }
             else
             {
@@ -86,7 +116,7 @@ public class EnemyMovement : MonoBehaviour
 
             Vector2 move = new Vector2(patrolDirection, 0);
 
-            rb.linearVelocity = move * moveSpeed;
+            rb.linearVelocity = move * currentMoveSpeed;
 
             if (move.x > 0)
             {

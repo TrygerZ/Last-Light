@@ -75,7 +75,7 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 3
+  m_PointLightInnerRadius: 5
   m_PointLightOuterRadius: 6
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
@@ -122,7 +122,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 2.3
+  m_Radius: 3
 --- !u!114 &378343219333261403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4c238d419bf5f049bb9e1ec0a7ede69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
-  damage: 1
-  damageCooldown: 0
+  damage: 10
+  damageCooldown: 0.5
+  invulnerabilityDuration: 0.5
   isEnemy: 0
 --- !u!114 &4813374097888124185
 MonoBehaviour:
@@ -150,7 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efefb4d3d830f8c438d87b637353fa39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampfireBurnout
-  baseCampfireDuration: 20
+  baseCampfireDuration: 120
+  torchRefillRate: 2.5
+  healthHealRate: 1
+  refillInterval: 0.25
   remainingTime: 0
   isLit: 1
 --- !u!1 &8748053427673427089

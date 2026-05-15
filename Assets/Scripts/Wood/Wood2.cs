@@ -3,7 +3,7 @@ using UnityEngine;
 public class Wood2 : MonoBehaviour
 {
     [Header("Wood Properties")]
-    [SerializeField] private float timeValue = 20f;
+    [SerializeField] private float timeValue = 25f;
     [SerializeField] private float weight = 2f;
 
     public float TimeValue => timeValue;

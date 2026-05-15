@@ -2,11 +2,23 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
+    [Header("Damage Settings")]
     public int damage;
     [SerializeField] float damageCooldown;
+
+    [Header("Invulnerability Frames (Player Only)")]
+    [Tooltip("Duration of invulnerability after taking damage (shared across all enemies). Prevents death-spiral from multiple enemies.")]
+    [SerializeField] private float invulnerabilityDuration = 0.5f;
     [SerializeField] private bool isEnemy;
+
     private Health health;
     private float timeCheck;
+    private float invulnerabilityTimer;
+
+    // Static shared invulnerability for player across ALL enemy Damage components
+    private static float sharedInvulnerabilityTimer = 0f;
+
+    public float DamageCooldown => damageCooldown;
 
     private void Awake()
     {
@@ -28,7 +40,8 @@ public class Damage : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (health != null)
+        Health exitingHealth = collision.GetComponent<Health>();
+        if (exitingHealth != null && exitingHealth == health)
         {
             health = null;
             timeCheck = damageCooldown;
@@ -37,6 +50,12 @@ public class Damage : MonoBehaviour
 
     private void Update()
     {
+        // Update shared invulnerability timer globally
+        if (sharedInvulnerabilityTimer > 0f)
+        {
+            sharedInvulnerabilityTimer -= Time.deltaTime;
+        }
+
         if (health != null)
         {
             if (health.gameObject == null)
@@ -46,10 +65,24 @@ public class Damage : MonoBehaviour
                 return;
             }
 
+            // Skip damage ONLY if an enemy tries to hit player during invulnerability frames
+            // Player can ALWAYS attack enemies regardless of i-frame status
+            if (isEnemy && sharedInvulnerabilityTimer > 0f)
+            {
+                return;
+            }
+
             timeCheck += Time.deltaTime;
             if (timeCheck >= damageCooldown)
             {
                 health.TakeDamage(damage);
+
+                // Trigger invulnerability frames if this is an enemy hitting a non-enemy (player)
+                if (isEnemy)
+                {
+                    sharedInvulnerabilityTimer = invulnerabilityDuration;
+                }
+
                 timeCheck = 0;
             }
         }

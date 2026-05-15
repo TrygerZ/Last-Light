@@ -20,6 +20,7 @@ public class MoonTimer : MonoBehaviour
     [SerializeField] private float normalizedTime;
     [SerializeField] private bool isFinished;
 
+    public float TotalDuration => totalDuration;
     public float RemainingTime => remainingTime;
     public float NormalizedTime => normalizedTime;
     public bool IsFinished => isFinished;
