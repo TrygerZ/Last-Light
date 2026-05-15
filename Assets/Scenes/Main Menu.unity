@@ -798,15 +798,15 @@ RectTransform:
   m_GameObject: {fileID: 1004019065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.82324, y: 0.82324, z: 0.82324}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1126249942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191, y: -864}
-  m_SizeDelta: {x: 1450.1592, y: 343.3364}
+  m_AnchoredPosition: {x: 31, y: -40}
+  m_SizeDelta: {x: 1450, y: 343}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1004019068
 CanvasRenderer:
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1483,8 +1483,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8987488091037506833, guid: 75df43a0869277f47bc050de91c68323, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987488091037506833, guid: 75df43a0869277f47bc050de91c68323, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8871946266565818176, guid: 75df43a0869277f47bc050de91c68323, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75df43a0869277f47bc050de91c68323, type: 3}
@@ -1739,6 +1748,7 @@ MonoBehaviour:
   backpack: {fileID: 246466920639172685}
   consumeKey: 113
   woodType: Wood1
+  wood1TorchFuelValue: 5
 --- !u!50 &2604302878359587937
 Rigidbody2D:
   serializedVersion: 5
@@ -2062,6 +2072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damage: 1
   damageCooldown: 0
+  invulnerabilityDuration: 0.5
   isEnemy: 0
 --- !u!114 &9123456790931459830
 MonoBehaviour:

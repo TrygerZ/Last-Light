@@ -1299,6 +1299,7 @@ GameObject:
   - component: {fileID: 8987488091021300841}
   - component: {fileID: 4863376115864043758}
   - component: {fileID: 8987488091021300842}
+  - component: {fileID: 8987488091021300843}
   m_Layer: 1
   m_Name: CampFire_Light
   m_TagString: Light
@@ -1570,11 +1571,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CampfireBurnout
   baseCampfireDuration: 12
+  startingTime: 3
   torchRefillRate: 5
   healthHealRate: 2
   refillInterval: 0.25
+  campfireAnimator: {fileID: 2629727906983222604}
   remainingTime: 0
   isLit: 1
+--- !u!114 &8987488091021300843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5515784327138498501}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c238d419bf5f049bb9e1ec0a7ede69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Damage
+  damage: 0
+  damageCooldown: 0
+  invulnerabilityDuration: 0.5
+  isEnemy: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

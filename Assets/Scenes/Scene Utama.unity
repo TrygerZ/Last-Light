@@ -6051,6 +6051,11 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
+--- !u!95 &2004600027 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2629727906964853812, guid: 75df43a0869277f47bc050de91c68323, type: 3}
+  m_PrefabInstance: {fileID: 985882313700281517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2030706458
 GameObject:
   m_ObjectHideFlags: 0
@@ -6547,6 +6552,10 @@ PrefabInstance:
       propertyPath: torchRefillRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4813374097888124185, guid: 75df43a0869277f47bc050de91c68323, type: 3}
+      propertyPath: campfireAnimator
+      value: 
+      objectReference: {fileID: 2004600027}
     - target: {fileID: 8748053427673427089, guid: 75df43a0869277f47bc050de91c68323, type: 3}
       propertyPath: m_Name
       value: Camp Fire
