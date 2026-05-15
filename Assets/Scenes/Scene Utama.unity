@@ -883,8 +883,8 @@ MonoBehaviour:
   maxWoodCount: 10
   spawnAreaMin: {x: -150, y: -2.78}
   spawnAreaMax: {x: 150, y: -2.78}
-  exclusionXMin: -10
-  exclusionXMax: 10
+  exclusionXMin: -30
+  exclusionXMax: 30
   wood1Weight: 60
   wood2Weight: 30
   wood3Weight: 10
@@ -1647,7 +1647,7 @@ Transform:
   m_GameObject: {fileID: 419688986}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08892881, y: 3.3765915e-16, z: 1.8587271e-17, w: 0.996038}
-  m_LocalPosition: {x: -7.84, y: -1.99, z: -11}
+  m_LocalPosition: {x: -7.46, y: -2.01, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1895,7 +1895,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08892883, y: 3.386996e-16, z: 3.023997e-17, w: 0.996038}
-  m_LocalPosition: {x: -7.84, y: -1.99, z: -11}
+  m_LocalPosition: {x: -7.46, y: -2.01, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2298,8 +2298,8 @@ MonoBehaviour:
   maxWoodCount: 5
   spawnAreaMin: {x: -150, y: -2.7}
   spawnAreaMax: {x: 150, y: -2.7}
-  exclusionXMin: -10
-  exclusionXMax: 10
+  exclusionXMin: -30
+  exclusionXMax: 30
   wood1Weight: 60
   wood2Weight: 30
   wood3Weight: 10
@@ -2529,11 +2529,11 @@ PrefabInstance:
       objectReference: {fileID: 328359709}
     - target: {fileID: 6058275335023166237, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.84
+      value: -7.46
       objectReference: {fileID: 0}
     - target: {fileID: 6058275335023166237, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.99
+      value: -2.01
       objectReference: {fileID: 0}
     - target: {fileID: 6058275335023166237, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2566,6 +2566,18 @@ PrefabInstance:
     - target: {fileID: 6058275335023166237, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115129852923450563, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7996016467779673720, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709020782643321469, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9123456789012345678, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: fireBar
@@ -5010,8 +5022,8 @@ MonoBehaviour:
   maxWoodCount: 2
   spawnAreaMin: {x: -150, y: -2.45}
   spawnAreaMax: {x: 150, y: -2.45}
-  exclusionXMin: -10
-  exclusionXMax: 10
+  exclusionXMin: -30
+  exclusionXMax: 30
   wood1Weight: 60
   wood2Weight: 30
   wood3Weight: 10
@@ -6556,6 +6568,10 @@ PrefabInstance:
       propertyPath: campfireAnimator
       value: 
       objectReference: {fileID: 2004600027}
+    - target: {fileID: 5194425323160193976, guid: 75df43a0869277f47bc050de91c68323, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8748053427673427089, guid: 75df43a0869277f47bc050de91c68323, type: 3}
       propertyPath: m_Name
       value: Camp Fire
@@ -6576,6 +6592,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6448581525561414, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051077929990019938, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185694146849715811, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3921633563758387573, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

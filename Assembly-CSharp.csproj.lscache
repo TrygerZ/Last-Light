@@ -50,49 +50,6 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 /warnaserror+:NU1605
 
 [sourceFiles]
-Assets/Cainos/
- Common/Script/Utils/SecondOrderDynamics.cs
- Pixel Art Platformer - Village Props/Script/
-  BoundingPlatform.cs
-  Chest.cs
-  Elevator.cs
-  MovingPlatform.cs
- Third Party/Lucid Editor/Runtime/Attributes/
-  AssetsOnlyAttribute.cs
-  BlockquoteAttribute.cs
-  BoxGroupAttribute.cs
-  ButtonAttribute.cs
-  DisableIfAttribute.cs
-  DisableInEditModeAttribute.cs
-  DisableInPlayModeAttribute.cs
-  DisableLucidEditorAttribute.cs
-  EnableIfAttribute.cs
-  FoldoutGroupAttribute.cs
-  GroupAttribute.cs
-  GUIColorAttribute.cs
-  HelpBoxAttribute.cs
-  HelpBoxIfAttribute.cs
-  HideIfAttribute.cs
-  HideLabelAttribute.cs
-  HideMonoScript.cs
-  HorizontalGroupAttribute.cs
-  HorizontalLineAttribute.cs
-  IndentAttribute.cs
-  LabelTextAttribute.cs
-  LabelWidthAttribute.cs
-  OnValueChangedAttribute.cs
-  PropertyOrderAttribute.cs
-  ReadOnlyAttribute.cs
-  RequiredAttribute.cs
-  SectionHeaderAttribute.cs
-  ShowIfAttribute.cs
-  ShowInInspectorAttribute.cs
-  TabGroupAttribute.cs
-  TitleHeaderAttribute.cs
-  ValidateInputAttribute.cs
- Third Party/Lucid Editor/Runtime/
-  Enum.cs
-  PropertyGroupAttribute.cs
 Assets/Scripts/Enemy/
  EnemyDeath.cs
  EnemyMovement.cs

@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 5789200093759024975}
   - component: {fileID: 5789200093759024960}
   - component: {fileID: 8544520507046222392}
+  - component: {fileID: 4553877524495132614}
   - component: {fileID: 2265311964591123199}
+  - component: {fileID: 1260753361036603783}
   m_Layer: 6
   m_Name: Wood 3
   m_TagString: Untagged
@@ -152,6 +154,65 @@ PolygonCollider2D:
       - {x: 0.39294243, y: 0.06572211}
       - {x: 0.3306675, y: 0.12918413}
   m_UseDelaunayMesh: 1
+--- !u!60 &4553877524495132614
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789200093759024974}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 200
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.84375, y: 0.5}
+    newSize: {x: 1.09375, y: 1.09375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.016310692, y: 0.15728569}
+      - {x: -0.04743862, y: 0.22099566}
+      - {x: -0.11033821, y: 0.22048676}
+      - {x: -0.11057949, y: 0.1558001}
+      - {x: -0.32834244, y: 0.12687683}
+      - {x: -0.39206696, y: 0.06334281}
+      - {x: -0.39206696, y: -0.15605903}
+      - {x: -0.32997608, y: -0.21978378}
+      - {x: 0.32856274, y: -0.21962786}
+      - {x: 0.39266968, y: -0.15675962}
+      - {x: 0.39294243, y: 0.06572211}
+      - {x: 0.3306675, y: 0.12918413}
+  m_UseDelaunayMesh: 1
 --- !u!114 &2265311964591123199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +228,30 @@ MonoBehaviour:
   timeValue: 45
   weight: 3
   woodType: Wood3
+--- !u!50 &1260753361036603783
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789200093759024974}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
