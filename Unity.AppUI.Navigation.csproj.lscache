@@ -346,10 +346,7 @@ Library/PackageCache/
 Temp/bin/Debug/
  Unity.AppUI.dll
  Unity.AppUI.InternalAPIBridge.dll
- Unity.InputSystem.dll
- UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
- UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 
 [analyzerReferences]

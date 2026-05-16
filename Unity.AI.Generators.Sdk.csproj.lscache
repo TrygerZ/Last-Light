@@ -356,17 +356,10 @@ Library/PackageCache/
   Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll
   Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll
 Temp/bin/Debug/
- Unity.AI.Generators.Asset.dll
- Unity.AI.Generators.Contexts.dll
  Unity.AI.Generators.IO.dll
- Unity.AI.Generators.IO.Srp.dll
- Unity.AI.Generators.Redux.dll
  Unity.AI.Toolkit.Accounts.dll
  Unity.AI.Toolkit.Asset.dll
  Unity.AI.Toolkit.Async.dll
- Unity.AI.Toolkit.Compliance.dll
- Unity.AI.Toolkit.Utility.dll
- Unity.Mathematics.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
  UnityEngine.TestRunner.dll

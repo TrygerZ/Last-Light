@@ -372,13 +372,8 @@ Temp/bin/Debug/
  Unity.2D.Common.Editor.dll
  Unity.2D.Common.Path.Editor.dll
  Unity.2D.Common.Runtime.dll
- Unity.2D.Sprite.Editor.dll
  Unity.2D.SpriteShape.Runtime.dll
- Unity.Burst.dll
- Unity.Collections.dll
  Unity.InternalAPIEditorBridge.001.dll
- Unity.InternalAPIEngineBridge.001.dll
- Unity.Mathematics.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
  UnityEngine.TestRunner.dll

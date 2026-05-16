@@ -354,58 +354,11 @@ Library/PackageCache/
  com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll
  com.unity.nuget.newtonsoft-json@4dfd81071c64/Runtime/Newtonsoft.Json.dll
 Temp/bin/Debug/
- glTFast.dll
- glTFast.Export.dll
- HFDownloader.dll
- Unity.2D.Sprite.Editor.dll
- Unity.AI.Animate.dll
- Unity.AI.Animate.Motion.Runtime.dll
- Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.dll
- Unity.AI.Assistant.Annotations.Editor.dll
- Unity.AI.Assistant.Bridge.Editor.dll
  Unity.AI.Assistant.Editor.dll
  Unity.AI.Assistant.Runtime.dll
- Unity.AI.Assistant.Tools.Editor.dll
  Unity.AI.Assistant.UI.Editor.dll
- Unity.AI.Generators.Asset.dll
- Unity.AI.Generators.Contexts.dll
- Unity.AI.Generators.IO.dll
- Unity.AI.Generators.IO.Srp.dll
- Unity.AI.Generators.Redux.dll
- Unity.AI.Generators.Sdk.dll
  Unity.AI.Generators.Tools.dll
- Unity.AI.Generators.UI.AIDropdownIntegrations.dll
- Unity.AI.Generators.UI.dll
- Unity.AI.Image.dll
- Unity.AI.Mesh.dll
- Unity.AI.ModelSelector.dll
- Unity.AI.Pbr.dll
- Unity.AI.Pbr.Srp.dll
- Unity.AI.Search.Editor.dll
- Unity.AI.Sound.dll
- Unity.AI.Toolkit.Accounts.dll
- Unity.AI.Toolkit.Asset.dll
  Unity.AI.Toolkit.Async.dll
- Unity.AI.Toolkit.Compliance.dll
- Unity.AI.Toolkit.GenerationContextMenu.dll
- Unity.AI.Toolkit.GenerationObjectPicker.dll
- Unity.AI.Toolkit.Utility.dll
- Unity.AI.Tracing.dll
- Unity.Burst.dll
- Unity.Collections.dll
- Unity.InferenceEngine.dll
- Unity.InputSystem.dll
- Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll
- Unity.Mathematics.dll
- Unity.PathTracing.Runtime.dll
- Unity.RenderPipeline.Universal.ShaderLibrary.dll
- Unity.RenderPipelines.Core.Runtime.dll
- Unity.RenderPipelines.Core.Runtime.Shared.dll
- Unity.RenderPipelines.GPUDriven.Runtime.dll
- Unity.RenderPipelines.Universal.Config.Runtime.dll
- Unity.RenderPipelines.Universal.Runtime.dll
- Unity.SurfaceCache.Runtime.dll
- Unity.UnifiedRayTracing.Runtime.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
  UnityEngine.TestRunner.dll

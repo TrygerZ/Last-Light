@@ -446,16 +446,11 @@ Library/PackageCache/
   Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll
   Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll
 Temp/bin/Debug/
- Unity.2D.Sprite.Editor.dll
  Unity.AI.Animate.Motion.Runtime.dll
- Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.dll
- Unity.AI.Assistant.Bridge.Editor.dll
  Unity.AI.Assistant.Editor.dll
- Unity.AI.Assistant.Runtime.dll
  Unity.AI.Generators.Asset.dll
  Unity.AI.Generators.Contexts.dll
  Unity.AI.Generators.IO.dll
- Unity.AI.Generators.IO.Srp.dll
  Unity.AI.Generators.Redux.dll
  Unity.AI.Generators.Sdk.dll
  Unity.AI.Generators.UI.AIDropdownIntegrations.dll
@@ -464,11 +459,9 @@ Temp/bin/Debug/
  Unity.AI.Toolkit.Accounts.dll
  Unity.AI.Toolkit.Asset.dll
  Unity.AI.Toolkit.Async.dll
- Unity.AI.Toolkit.Compliance.dll
  Unity.AI.Toolkit.GenerationContextMenu.dll
  Unity.AI.Toolkit.GenerationObjectPicker.dll
  Unity.AI.Toolkit.Utility.dll
- Unity.AI.Tracing.dll
  Unity.Mathematics.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll

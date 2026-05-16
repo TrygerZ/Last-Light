@@ -363,7 +363,6 @@ Temp/bin/Debug/
  Unity.2D.Common.Runtime.dll
  Unity.2D.Sprite.Editor.dll
  Unity.Burst.dll
- Unity.Collections.dll
  Unity.Mathematics.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll

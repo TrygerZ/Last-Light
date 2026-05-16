@@ -408,22 +408,12 @@ Library/PackageCache/
  com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll
  com.unity.nuget.newtonsoft-json@4dfd81071c64/Runtime/Newtonsoft.Json.dll
 Temp/bin/Debug/
- HFDownloader.dll
  Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.dll
  Unity.AI.Assistant.Bridge.Editor.dll
  Unity.AI.Assistant.Editor.dll
  Unity.AI.Assistant.Runtime.dll
  Unity.AI.Search.Editor.dll
- Unity.AI.Toolkit.Accounts.dll
- Unity.AI.Toolkit.Asset.dll
- Unity.AI.Toolkit.Async.dll
  Unity.AI.Toolkit.Compliance.dll
- Unity.AI.Toolkit.Utility.dll
- Unity.AI.Tracing.dll
- Unity.Burst.dll
- Unity.Collections.dll
- Unity.InferenceEngine.dll
- Unity.Mathematics.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
  UnityEngine.TestRunner.dll
