@@ -77,6 +77,12 @@ public class EnemyMovement : MonoBehaviour
             {
                 Vector2 direction = (target.position - transform.position).normalized;
                 rb.linearVelocity = direction * currentMoveSpeed;
+
+                // Flip sprite to face movement direction while chasing
+                if (direction.x > 0)
+                    sprite.flipX = true;
+                else if (direction.x < 0)
+                    sprite.flipX = false;
             }
             else
             {
