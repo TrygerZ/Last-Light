@@ -89,11 +89,8 @@ public class Damage : MonoBehaviour
                     sharedInvulnerabilityTimer = invulnerabilityDuration;
                 }
 
-                // Remove dead targets
-                if (target.CurrentHealth <= 0)
-                {
-                    targetsInRange.RemoveAt(i);
-                }
+                // Note: Dead targets are auto-removed by OnTriggerExit2D (via Destroy in Health.cs)
+                // Do NOT call RemoveAt here — it causes race condition crash
             }
 
             // SFX musuh menyerang player
