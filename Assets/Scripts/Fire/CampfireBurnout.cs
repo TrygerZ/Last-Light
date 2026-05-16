@@ -139,6 +139,10 @@ public class CampfireBurnout : MonoBehaviour
                     campfireAnimator.SetBool("IsLit", true);
             }
 
+            // SFX deposit kayu ke campfire (play from 0.5s to 2.5s)
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlaySFXSliced(AudioManager.Instance.depositWoodSFX, 0.5f, 2.5f);
+
             Debug.Log($"🔥 Campfire received {totalTime}s of fuel from all wood!");
         }
     }

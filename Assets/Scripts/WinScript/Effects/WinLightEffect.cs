@@ -63,6 +63,10 @@ public class WinLightEffect : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(fadeOutDelay);
 
+        // SFX menang
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.winSFX);
+
         float elapsed = 0f;
 
         while (elapsed < effectDuration)

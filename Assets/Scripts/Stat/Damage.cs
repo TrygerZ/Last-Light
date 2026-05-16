@@ -77,6 +77,10 @@ public class Damage : MonoBehaviour
             {
                 health.TakeDamage(damage);
 
+                // SFX musuh menyerang player
+                if (isEnemy && AudioManager.Instance != null)
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyAttackSFX);
+
                 // Trigger invulnerability frames if this is an enemy hitting a non-enemy (player)
                 if (isEnemy)
                 {

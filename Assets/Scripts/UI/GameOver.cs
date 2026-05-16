@@ -6,6 +6,10 @@ public class GameOver : MonoBehaviour
     public void setUp()
     {
         gameObject.SetActive(true);
+
+        // SFX kalah
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.loseSFX);
     }
 
     public void restart()
