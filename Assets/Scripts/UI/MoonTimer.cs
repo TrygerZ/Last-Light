@@ -74,6 +74,10 @@ public class MoonTimer : MonoBehaviour
             normalizedTime = 0f;
             SetMoonPosition(1f);
 
+            // Stop gameplay music before showing win
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.StopMusic();
+
             if (winScreen != null)
                 winScreen.ShowWin();
 

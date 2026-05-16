@@ -5,6 +5,9 @@ public class Backpack : MonoBehaviour
 {
     public static Backpack Instance { get; private set; }
 
+    // Shared pickup lock — prevents picking multiple woods at once
+    public static bool IsPlayerPickingUp { get; set; } = false;
+
     public int wood1Count = 0;
     public int wood2Count = 0;
     public int wood3Count = 0;

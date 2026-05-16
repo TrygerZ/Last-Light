@@ -44,16 +44,18 @@ public class AudioManager : MonoBehaviour
         musicSource.playOnAwake = false;
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, float volume = 1f)
     {
         if (clip != null && sfxSource != null)
-            sfxSource.PlayOneShot(clip);
+            sfxSource.PlayOneShot(clip, volume);
     }
 
-    public void PlaySFXSliced(AudioClip clip, float startTime, float endTime)
+    public void PlaySFXSliced(AudioClip clip, float startTime, float endTime, float volume = 1f)
     {
         if (clip == null || sfxSource == null) return;
         if (startTime >= endTime || startTime < 0f) return;
+
+        sfxSource.volume = volume;
 
         sfxSource.clip = clip;
         sfxSource.time = startTime;

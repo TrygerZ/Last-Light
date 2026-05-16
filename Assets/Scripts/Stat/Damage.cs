@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Damage : MonoBehaviour
@@ -11,40 +12,40 @@ public class Damage : MonoBehaviour
     [SerializeField] private float invulnerabilityDuration = 0.5f;
     [SerializeField] private bool isEnemy;
 
-    private Health health;
+    private List<Health> targetsInRange = new List<Health>();
     private float timeCheck;
-    private float invulnerabilityTimer;
 
     // Static shared invulnerability for player across ALL enemy Damage components
     private static float sharedInvulnerabilityTimer = 0f;
 
-    public float DamageCooldown => damageCooldown;
-
-    private void Awake()
+    private void Start()
     {
         timeCheck = damageCooldown;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Friendly fire check
         Damage otherDamage = collision.GetComponent<Damage>();
         if (otherDamage != null)
         {
             if (otherDamage.isEnemy == isEnemy)
-            {
                 return;
-            }
         }
 
-        health = collision.GetComponent<Health>();
+        Health newHealth = collision.GetComponent<Health>();
+        if (newHealth != null && !targetsInRange.Contains(newHealth))
+        {
+            targetsInRange.Add(newHealth);
+        }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         Health exitingHealth = collision.GetComponent<Health>();
-        if (exitingHealth != null && exitingHealth == health)
+        if (exitingHealth != null)
         {
-            health = null;
-            timeCheck = damageCooldown;
+            targetsInRange.Remove(exitingHealth);
         }
     }
 
@@ -56,39 +57,48 @@ public class Damage : MonoBehaviour
             sharedInvulnerabilityTimer -= Time.deltaTime;
         }
 
-        if (health != null)
+        // Remove null/destroyed targets
+        targetsInRange.RemoveAll(t => t == null || t.gameObject == null);
+
+        if (targetsInRange.Count == 0) return;
+
+        timeCheck += Time.deltaTime;
+        if (timeCheck >= damageCooldown)
         {
-            if (health.gameObject == null)
+            timeCheck = 0f;
+
+            // Damage ALL valid targets in range
+            for (int i = targetsInRange.Count - 1; i >= 0; i--)
             {
-                health = null;
-                timeCheck = 0;
-                return;
-            }
+                Health target = targetsInRange[i];
+                if (target == null || target.gameObject == null)
+                {
+                    targetsInRange.RemoveAt(i);
+                    continue;
+                }
 
-            // Skip damage ONLY if an enemy tries to hit player during invulnerability frames
-            // Player can ALWAYS attack enemies regardless of i-frame status
-            if (isEnemy && sharedInvulnerabilityTimer > 0f)
-            {
-                return;
-            }
+                // Skip if enemy tries to hit player during invulnerability frames
+                if (isEnemy && sharedInvulnerabilityTimer > 0f)
+                    continue;
 
-            timeCheck += Time.deltaTime;
-            if (timeCheck >= damageCooldown)
-            {
-                health.TakeDamage(damage);
+                target.TakeDamage(damage);
 
-                // SFX musuh menyerang player
-                if (isEnemy && AudioManager.Instance != null)
-                    AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyAttackSFX);
-
-                // Trigger invulnerability frames if this is an enemy hitting a non-enemy (player)
+                // Trigger invulnerability frames if enemy hits player
                 if (isEnemy)
                 {
                     sharedInvulnerabilityTimer = invulnerabilityDuration;
                 }
 
-                timeCheck = 0;
+                // Remove dead targets
+                if (target.CurrentHealth <= 0)
+                {
+                    targetsInRange.RemoveAt(i);
+                }
             }
+
+            // SFX musuh menyerang player
+            if (isEnemy && AudioManager.Instance != null)
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyAttackSFX);
         }
     }
 }
