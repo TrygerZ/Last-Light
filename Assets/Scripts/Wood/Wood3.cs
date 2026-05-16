@@ -29,8 +29,6 @@ public class Wood3 : MonoBehaviour
         if (!playerInRange || isPickedUp || Backpack.IsPlayerPickingUp)
             return;
 
-        // Wood3 is highest priority — no check needed
-
         if (Input.GetKeyDown(KeyCode.E))
             PickUp();
     }
@@ -62,8 +60,7 @@ public class Wood3 : MonoBehaviour
 
         if (!Backpack.Instance.CanAddWood(woodType))
         {
-            Debug.LogWarning($"Cannot pick up {woodType} (weight: {weight}) — backpack full! "
-                + $"({Backpack.Instance.CurrentWeight}/{Backpack.Instance.MaxCapacity})");
+            Debug.LogWarning($"Cannot pick up {woodType} — backpack full! ({Backpack.Instance.CurrentWeight}/{Backpack.Instance.MaxCapacity})");
             return;
         }
 

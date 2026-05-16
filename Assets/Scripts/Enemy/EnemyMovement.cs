@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
     private bool isIdle;
     private SpriteRenderer sprite;
 
-    [Header("Phase-Based Speed (Hardcoded)")]
+    [Header("Phase-Based Speed")]
     [SerializeField] private MoonTimer moonTimer;
     [SerializeField] private float speedAwal = 3f;
     [SerializeField] private float speedTengah = 3.6f;
@@ -40,10 +40,10 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        
+
         if (moonTimer == null)
             moonTimer = FindFirstObjectByType<MoonTimer>();
-            
+
         currentMoveSpeed = moveSpeed;
     }
 
@@ -53,11 +53,11 @@ public class EnemyMovement : MonoBehaviour
 
         float elapsed = moonTimer.TotalDuration - moonTimer.RemainingTime;
 
-        if (elapsed <= 60f)           // 00:00 - 01:00 → Awal
+        if (elapsed <= 60f)
             currentMoveSpeed = speedAwal;
-        else if (elapsed <= 180f)     // 01:01 - 03:00 → Tengah
+        else if (elapsed <= 180f)
             currentMoveSpeed = speedTengah;
-        else                          // 03:01 - 05:00 → Akhir
+        else
             currentMoveSpeed = speedAkhir;
     }
 
@@ -78,7 +78,6 @@ public class EnemyMovement : MonoBehaviour
                 Vector2 direction = (target.position - transform.position).normalized;
                 rb.linearVelocity = direction * currentMoveSpeed;
 
-                // Flip sprite to face movement direction while chasing
                 if (direction.x > 0)
                     sprite.flipX = true;
                 else if (direction.x < 0)
@@ -99,7 +98,7 @@ public class EnemyMovement : MonoBehaviour
             idleTimer += Time.fixedDeltaTime;
 
             if (idleTimer >= idleTime)
-            { 
+            {
                 idleTimer = 0;
                 isIdle = false;
 
@@ -125,13 +124,9 @@ public class EnemyMovement : MonoBehaviour
             rb.linearVelocity = move * currentMoveSpeed;
 
             if (move.x > 0)
-            {
                 sprite.flipX = true;
-            }
             else if (move.x < 0)
-            {
                 sprite.flipX = false;
-            }
 
             if (patrolTimer >= patrolTime)
             {

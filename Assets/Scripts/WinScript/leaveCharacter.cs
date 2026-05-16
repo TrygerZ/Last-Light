@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class LeaveCharacter : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] float speed;

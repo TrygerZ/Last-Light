@@ -74,14 +74,11 @@ public class MoonTimer : MonoBehaviour
             normalizedTime = 0f;
             SetMoonPosition(1f);
 
-            // Stop gameplay music before showing win
             if (AudioManager.Instance != null)
                 AudioManager.Instance.StopMusic();
 
             if (winScreen != null)
                 winScreen.ShowWin();
-
-            Debug.Log("🌙 Moon Timer: Time's up! Player wins!");
         }
     }
 
@@ -97,9 +94,6 @@ public class MoonTimer : MonoBehaviour
         rightBound = (cameraWidth * 0.5f) - hPadding;
 
         centerY = 0f;
-
-        Debug.Log($"MoonTimer: Camera {cameraWidth:F1}x{cameraHeight:F1}, "
-            + $"X:{leftBound:F1}→{rightBound:F1}, CenterY:0");
     }
 
     private void SetMoonPosition(float t)

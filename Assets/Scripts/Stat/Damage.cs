@@ -7,15 +7,14 @@ public class Damage : MonoBehaviour
     public int damage;
     [SerializeField] float damageCooldown;
 
-    [Header("Invulnerability Frames (Player Only)")]
-    [Tooltip("Duration of invulnerability after taking damage (shared across all enemies). Prevents death-spiral from multiple enemies.")]
+    [Header("Invulnerability Frames")]
+    [Tooltip("Duration of invulnerability after taking damage (shared across all enemies).")]
     [SerializeField] private float invulnerabilityDuration = 0.5f;
     [SerializeField] private bool isEnemy;
 
     private List<Health> targetsInRange = new List<Health>();
     private float timeCheck;
 
-    // Static shared invulnerability for player across ALL enemy Damage components
     private static float sharedInvulnerabilityTimer = 0f;
 
     private void Start()
@@ -25,7 +24,6 @@ public class Damage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Friendly fire check
         Damage otherDamage = collision.GetComponent<Damage>();
         if (otherDamage != null)
         {
@@ -35,29 +33,21 @@ public class Damage : MonoBehaviour
 
         Health newHealth = collision.GetComponent<Health>();
         if (newHealth != null && !targetsInRange.Contains(newHealth))
-        {
             targetsInRange.Add(newHealth);
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         Health exitingHealth = collision.GetComponent<Health>();
         if (exitingHealth != null)
-        {
             targetsInRange.Remove(exitingHealth);
-        }
     }
 
     private void Update()
     {
-        // Update shared invulnerability timer globally
         if (sharedInvulnerabilityTimer > 0f)
-        {
             sharedInvulnerabilityTimer -= Time.deltaTime;
-        }
 
-        // Remove null/destroyed targets
         targetsInRange.RemoveAll(t => t == null || t.gameObject == null);
 
         if (targetsInRange.Count == 0) return;
@@ -67,7 +57,6 @@ public class Damage : MonoBehaviour
         {
             timeCheck = 0f;
 
-            // Damage ALL valid targets in range
             for (int i = targetsInRange.Count - 1; i >= 0; i--)
             {
                 Health target = targetsInRange[i];
@@ -77,23 +66,15 @@ public class Damage : MonoBehaviour
                     continue;
                 }
 
-                // Skip if enemy tries to hit player during invulnerability frames
                 if (isEnemy && sharedInvulnerabilityTimer > 0f)
                     continue;
 
                 target.TakeDamage(damage);
 
-                // Trigger invulnerability frames if enemy hits player
                 if (isEnemy)
-                {
                     sharedInvulnerabilityTimer = invulnerabilityDuration;
-                }
-
-                // Note: Dead targets are auto-removed by OnTriggerExit2D (via Destroy in Health.cs)
-                // Do NOT call RemoveAt here — it causes race condition crash
             }
 
-            // SFX musuh menyerang player
             if (isEnemy && AudioManager.Instance != null)
                 AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyAttackSFX);
         }

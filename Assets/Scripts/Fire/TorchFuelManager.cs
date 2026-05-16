@@ -11,7 +11,7 @@ public class TorchFuelManager : MonoBehaviour
     [SerializeField] private string woodType = "Wood1";
 
     [Header("Torch Fuel Override")]
-    [Tooltip("Wood1 gives 10s to campfire, but only 5s when directly consumed for torch (Q). Other wood types use their full time value.")]
+    [Tooltip("Wood1 gives 10s to campfire, but only 5s when directly consumed for torch (Q).")]
     [SerializeField] private float wood1TorchFuelValue = 5f;
 
     private void Awake()
@@ -26,9 +26,7 @@ public class TorchFuelManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(consumeKey))
-        {
             TryConsumeWoodForTorch();
-        }
     }
 
     private void TryConsumeWoodForTorch()
@@ -47,18 +45,15 @@ public class TorchFuelManager : MonoBehaviour
 
         if (backpack.GetWoodCount(woodType) <= 0)
         {
-            Debug.Log($"TorchFuelManager: No {woodType} available in backpack to consume!");
+            Debug.Log($"TorchFuelManager: No {woodType} available in backpack.");
             return;
         }
 
         float timeValue = backpack.GetWoodTimeValue(woodType);
-        
-        // Wood1: reduced fuel for torch (5s instead of 10s for campfire)
+
         if (woodType == "Wood1")
-        {
             timeValue = wood1TorchFuelValue;
-        }
-        
+
         if (timeValue <= 0f)
         {
             Debug.LogWarning($"TorchFuelManager: {woodType} has no valid time value!");
@@ -73,8 +68,5 @@ public class TorchFuelManager : MonoBehaviour
         }
 
         torchBurnout.RefillTorch(timeValue);
-
-        Debug.Log($"TorchFuelManager: Consumed 1 {woodType} → added {timeValue}s to torch. " +
-                  $"Remaining {woodType}: {backpack.GetWoodCount(woodType)}");
     }
 }

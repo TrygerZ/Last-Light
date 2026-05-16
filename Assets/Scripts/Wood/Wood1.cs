@@ -23,14 +23,12 @@ public class Wood1 : MonoBehaviour
 
     private void Update()
     {
-        // Reset shared lock when E is released
         if (Input.GetKeyUp(KeyCode.E))
             Backpack.IsPlayerPickingUp = false;
 
         if (!playerInRange || isPickedUp || Backpack.IsPlayerPickingUp)
             return;
 
-        // Check if higher-priority wood (Wood2 or Wood3) is also in range → let them pick up first
         if (HasHigherPriorityWoodNearby())
             return;
 
@@ -40,7 +38,6 @@ public class Wood1 : MonoBehaviour
 
     private bool HasHigherPriorityWoodNearby()
     {
-        // Check radius around player for Wood2 or Wood3 objects
         Collider2D[] nearby = Physics2D.OverlapCircleAll(transform.position, 2f);
         foreach (Collider2D col in nearby)
         {
@@ -79,8 +76,7 @@ public class Wood1 : MonoBehaviour
 
         if (!Backpack.Instance.CanAddWood(woodType))
         {
-            Debug.LogWarning($"Cannot pick up {woodType} (weight: {weight}) — backpack full! "
-                + $"({Backpack.Instance.CurrentWeight}/{Backpack.Instance.MaxCapacity})");
+            Debug.LogWarning($"Cannot pick up {woodType} — backpack full! ({Backpack.Instance.CurrentWeight}/{Backpack.Instance.MaxCapacity})");
             return;
         }
 
