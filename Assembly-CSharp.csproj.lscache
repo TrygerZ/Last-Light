@@ -50,6 +50,9 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 /warnaserror+:NU1605
 
 [sourceFiles]
+Assets/Scripts/Audio/
+ AudioManager.cs
+ MusicTrigger.cs
 Assets/Scripts/Enemy/
  EnemyDeath.cs
  EnemyMovement.cs
@@ -72,7 +75,9 @@ Assets/Scripts/
    ItemAmount.cs
    SanityBar.cs
    TorchDuration.cs
-  InGameUI/CampFireDuration.cs
+  InGameUI/
+   CampFireDuration.cs
+   EnemyHealthBar.cs
   MainMenu.cs
   MoonTimer.cs
   WinScreen.cs

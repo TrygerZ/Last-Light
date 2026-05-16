@@ -86,6 +86,10 @@ public class Wood2 : MonoBehaviour
             spawner.OnWoodPickedUp();
         }
 
+        // SFX pickup kayu
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.pickupWoodSFX);
+
         Destroy(gameObject);
     }
 }
