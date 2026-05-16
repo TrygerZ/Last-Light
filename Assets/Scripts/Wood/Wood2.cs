@@ -29,7 +29,6 @@ public class Wood2 : MonoBehaviour
         if (!playerInRange || isPickedUp || Backpack.IsPlayerPickingUp)
             return;
 
-        // Wood2 prioritizes Wood3 if nearby
         if (HasWood3Nearby())
             return;
 
@@ -75,8 +74,7 @@ public class Wood2 : MonoBehaviour
 
         if (!Backpack.Instance.CanAddWood(woodType))
         {
-            Debug.LogWarning($"Cannot pick up {woodType} (weight: {weight}) — backpack full! "
-                + $"({Backpack.Instance.CurrentWeight}/{Backpack.Instance.MaxCapacity})");
+            Debug.LogWarning($"Cannot pick up {woodType} — backpack full! ({Backpack.Instance.CurrentWeight}/{Backpack.Instance.MaxCapacity})");
             return;
         }
 

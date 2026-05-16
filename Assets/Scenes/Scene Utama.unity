@@ -306,7 +306,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.15
+  m_fontSize: 32.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -779,7 +779,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.45
+  m_fontSize: 29.05
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 155466359}
   - component: {fileID: 155466360}
   m_Layer: 0
-  m_Name: WoodSpawner_lvl1
+  m_Name: WoodSpawner_Dekat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,15 +878,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WoodSpawner
   woodPrefab: {fileID: 465610908160972485, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
   woodContainer: {fileID: 1867148944}
-  spawnInterval: 1
+  spawnInterval: 4
   maxWoodCount: 10
-  spawnAreaMin: {x: -150, y: -2.78}
-  spawnAreaMax: {x: 150, y: -2.78}
-  exclusionXMin: -30
-  exclusionXMax: 30
-  wood1Weight: 60
-  wood2Weight: 30
-  wood3Weight: 10
+  spawnAreaMin: {x: -150, y: 0}
+  spawnAreaMax: {x: 150, y: 0}
+  spawnY: -2.166439
+  exclusionXMin: -20
+  exclusionXMax: 20
+  wood1Weight: 90
+  wood2Weight: 10
+  wood3Weight: 0
   wood1Prefab: {fileID: 465610908160972485, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
   wood2Prefab: {fileID: 982056747370159609, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
   wood3Prefab: {fileID: 5789200093759024974, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
@@ -1764,6 +1765,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431110801}
   m_CullTransparentMesh: 1
+--- !u!1 &437684753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 437684754}
+  m_Layer: 0
+  m_Name: Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &437684754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437684753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -100, y: -0.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &500647570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2060,7 +2092,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.3
+  m_fontSize: 37.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2294,7 +2326,7 @@ GameObject:
   - component: {fileID: 618820718}
   - component: {fileID: 618820719}
   m_Layer: 0
-  m_Name: WoodSpawner_lvl2
+  m_Name: WoodSpawner_Tengah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2329,12 +2361,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WoodSpawner
   woodPrefab: {fileID: 982056747370159609, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
   woodContainer: {fileID: 1867148944}
-  spawnInterval: 2
+  spawnInterval: 6
   maxWoodCount: 5
-  spawnAreaMin: {x: -150, y: -2.7}
-  spawnAreaMax: {x: 150, y: -2.7}
-  exclusionXMin: -30
-  exclusionXMax: 30
+  spawnAreaMin: {x: -150, y: 0}
+  spawnAreaMax: {x: 150, y: 0}
+  spawnY: -2.166439
+  exclusionXMin: -50
+  exclusionXMax: 50
   wood1Weight: 60
   wood2Weight: 30
   wood3Weight: 10
@@ -3700,15 +3733,15 @@ MonoBehaviour:
   right: 30
   outsideDistance: 150
   moonTimer: {fileID: 722777214}
-  awalMinCD: 8
-  awalMaxCD: 14
-  awalLimit: 3
-  tengahMinCD: 5
-  tengahMaxCD: 9
-  tengahLimit: 5
-  akhirMinCD: 2.5
-  akhirMaxCD: 5
-  akhirLimit: 7
+  awalMinCD: 6
+  awalMaxCD: 10
+  awalLimit: 5
+  tengahMinCD: 3
+  tengahMaxCD: 6
+  tengahLimit: 8
+  akhirMinCD: 1.5
+  akhirMaxCD: 3
+  akhirLimit: 12
   currentSpawn: 0
 --- !u!1 &1186486388
 GameObject:
@@ -4175,7 +4208,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.4
+  m_fontSize: 37.7
   m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5122,7 +5155,7 @@ GameObject:
   - component: {fileID: 1593584490}
   - component: {fileID: 1593584491}
   m_Layer: 0
-  m_Name: WoodSpawner_lvl3
+  m_Name: WoodSpawner_Jauh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5157,15 +5190,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WoodSpawner
   woodPrefab: {fileID: 5789200093759024974, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
   woodContainer: {fileID: 1867148944}
-  spawnInterval: 3
-  maxWoodCount: 2
-  spawnAreaMin: {x: -150, y: -2.45}
-  spawnAreaMax: {x: 150, y: -2.45}
-  exclusionXMin: -30
-  exclusionXMax: 30
-  wood1Weight: 60
-  wood2Weight: 30
-  wood3Weight: 10
+  spawnInterval: 10
+  maxWoodCount: 3
+  spawnAreaMin: {x: -150, y: 0}
+  spawnAreaMax: {x: 150, y: 0}
+  spawnY: -2.166439
+  exclusionXMin: -100
+  exclusionXMax: 100
+  wood1Weight: 20
+  wood2Weight: 50
+  wood3Weight: 30
   wood1Prefab: {fileID: 465610908160972485, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
   wood2Prefab: {fileID: 982056747370159609, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
   wood3Prefab: {fileID: 5789200093759024974, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
@@ -5693,7 +5727,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24.25
+  m_fontSize: 31.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6585,7 +6619,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.75
+  m_fontSize: 31.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7026,3 +7060,4 @@ SceneRoots:
   - {fileID: 741559891}
   - {fileID: 114951209}
   - {fileID: 688839561}
+  - {fileID: 437684754}

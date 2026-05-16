@@ -10,21 +10,25 @@ public class WoodSpawner : MonoBehaviour
     [SerializeField] private float spawnInterval = 5f;
     [SerializeField] private int maxWoodCount = 10;
 
-    [Header("Spawn Area")]
+    [Header("Spawn Area X")]
     [SerializeField] private Vector2 spawnAreaMin = new Vector2(-10f, -8f);
     [SerializeField] private Vector2 spawnAreaMax = new Vector2(10f, 8f);
 
-    [Header("Exclusion Pillar (Vertical)")]
+    [Header("Fixed Y Position")]
+    [Tooltip("Kayu akan selalu spawn di Y position ini.")]
+    [SerializeField] private float spawnY = -2.166439f;
+
+    [Header("Exclusion Area")]
     [SerializeField] private float exclusionXMin = -2f;
     [SerializeField] private float exclusionXMax = 2f;
 
-    [Header("Zone Distribution (Weighted Random per Wood Type)")]
-    [Tooltip("Probabilities for Wood1, Wood2, Wood3 spawn. Must add up to 100. Example: 60,30,10")]
+    [Header("Zone Distribution")]
+    [Tooltip("Probabilities for Wood1, Wood2, Wood3 spawn. Example: 60,30,10")]
     [SerializeField] private int wood1Weight = 60;
     [SerializeField] private int wood2Weight = 30;
     [SerializeField] private int wood3Weight = 10;
 
-    [Header("Wood Prefabs (assign all 3 for zone spawning)")]
+    [Header("Wood Prefabs")]
     [SerializeField] private GameObject wood1Prefab;
     [SerializeField] private GameObject wood2Prefab;
     [SerializeField] private GameObject wood3Prefab;
@@ -54,17 +58,15 @@ public class WoodSpawner : MonoBehaviour
     {
         Vector3 spawnPos = GetValidSpawnPosition();
 
-        // Determine which wood type to spawn based on weighted random
         GameObject prefabToSpawn = GetWeightedWoodPrefab();
         if (prefabToSpawn == null)
-            prefabToSpawn = woodPrefab; // fallback to default
+            prefabToSpawn = woodPrefab;
         if (prefabToSpawn == null)
             return;
 
         GameObject newWood = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity, woodContainer);
         currentWoodCount++;
 
-        // Set spawner reference on whichever wood type was spawned
         Wood1 wood1 = newWood.GetComponent<Wood1>();
         if (wood1 != null) { wood1.SetSpawner(this); return; }
 
@@ -99,7 +101,7 @@ public class WoodSpawner : MonoBehaviour
     private Vector3 GetValidSpawnPosition()
     {
         float x = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
-        float y = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
+        float y = spawnY;
 
         if (x >= exclusionXMin && x <= exclusionXMax)
         {

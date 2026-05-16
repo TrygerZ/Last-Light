@@ -10,11 +10,10 @@ public class Health : MonoBehaviour
     public int CurrentHealth { get; private set; }
     public int MaxHealth => maxHealth;
 
-    [Header("For Enemy or player Bar")]
+    [Header("Bars")]
     [SerializeField] SanityBar sanity;
     [SerializeField] GameObject enemyBar;
     private EnemyHealthBar enemyBarScript;
-
 
     private void Awake()
     {
@@ -23,29 +22,21 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        enemyBarScript = enemyBar.GetComponent<EnemyHealthBar>();
+        if (enemyBar != null)
+            enemyBarScript = enemyBar.GetComponent<EnemyHealthBar>();
     }
 
     public void TakeDamage(int amount)
     {
         if (amount <= 0 || CurrentHealth <= 0)
-        {
             return;
-        }
 
         CurrentHealth -= amount;
 
-        Debug.Log($"{gameObject.name} took {amount} damage ({CurrentHealth}/{maxHealth})");
-
         if (CompareTag("PlayerBody"))
-        {
             sanity.setSanity(CurrentHealth);
-        }
-
-        else if (CompareTag("Enemy"))
-        {
+        else if (CompareTag("Enemy") && enemyBarScript != null)
             enemyBarScript.setHealth(CurrentHealth);
-        }
 
         if (CurrentHealth <= 0)
         {
@@ -61,17 +52,11 @@ public class Health : MonoBehaviour
     public void Heal(int amount)
     {
         if (amount <= 0 || CurrentHealth >= maxHealth)
-        {
             return;
-        }
 
         CurrentHealth = Mathf.Min(CurrentHealth + amount, maxHealth);
 
-        Debug.Log($"{gameObject.name} healed +{amount} ({CurrentHealth}/{maxHealth})");
-
         if (CompareTag("PlayerBody"))
-        {
             sanity.setSanity(CurrentHealth);
-        }
     }
 }
