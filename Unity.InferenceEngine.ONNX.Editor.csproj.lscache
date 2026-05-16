@@ -327,10 +327,7 @@ C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/
   System.Xml.Linq.dll
 Library/PackageCache/com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll
 Temp/bin/Debug/
- Unity.Burst.dll
- Unity.Collections.dll
  Unity.InferenceEngine.dll
- Unity.Mathematics.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
  UnityEngine.TestRunner.dll

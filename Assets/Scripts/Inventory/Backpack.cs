@@ -5,16 +5,17 @@ public class Backpack : MonoBehaviour
 {
     public static Backpack Instance { get; private set; }
 
+    public static bool IsPlayerPickingUp { get; set; } = false;
+
     public int wood1Count = 0;
     public int wood2Count = 0;
     public int wood3Count = 0;
 
     [Header("Capacity Settings")]
     [SerializeField] private float maxCapacity = 10f;
-    [Tooltip("Current total weight carried — readonly in Inspector")]
     [SerializeField] private float currentWeight = 0f;
 
-    [Header("Wood Prefab References (for weight & timeValue)")]
+    [Header("Wood Prefab References")]
     [SerializeField] private Wood1 wood1Prefab;
     [SerializeField] private Wood2 wood2Prefab;
     [SerializeField] private Wood3 wood3Prefab;
@@ -36,8 +37,6 @@ public class Backpack : MonoBehaviour
 
     public float MaxCapacity => maxCapacity;
     public float CurrentWeight => currentWeight;
-    public float RemainingCapacity => maxCapacity - currentWeight;
-    public bool IsFull => currentWeight >= maxCapacity;
 
     private void Awake()
     {
@@ -88,8 +87,7 @@ public class Backpack : MonoBehaviour
     {
         if (!CanAddWood(woodType))
         {
-            Debug.LogWarning($"Backpack: Cannot add {woodType} — backpack is full! "
-                + $"({currentWeight}/{maxCapacity} weight)");
+            Debug.LogWarning($"Backpack: Cannot add {woodType} — backpack is full! ({currentWeight}/{maxCapacity})");
             return false;
         }
 
@@ -104,9 +102,6 @@ public class Backpack : MonoBehaviour
             case "Wood3": wood3Count++; woodText3.textCount(wood3Count); break;
         }
 
-        Debug.Log($"Backpack: {woodType} (+{weight}) added. "
-            + $"Weight: {currentWeight}/{maxCapacity} | "
-            + $"W1:{wood1Count} W2:{wood2Count} W3:{wood3Count}");
         return true;
     }
 
@@ -124,26 +119,21 @@ public class Backpack : MonoBehaviour
         }
 
         if (!hasItem)
-        {
-            Debug.LogWarning($"Backpack: No {woodType} to remove!");
             return false;
-        }
 
         currentWeight = Mathf.Max(0f, currentWeight - weight);
         capacityText.getCapacity(currentWeight);
 
         switch (woodType)
         {
-            case "Wood1": wood1Count--;
-            woodText1.textCount(wood1Count);
-            break;
+            case "Wood1":
+                wood1Count--;
+                woodText1.textCount(wood1Count);
+                break;
             case "Wood2": wood2Count--; break;
             case "Wood3": wood3Count--; break;
         }
 
-        Debug.Log($"Backpack: {woodType} (-{weight}) removed. "
-            + $"Weight: {currentWeight}/{maxCapacity} | "
-            + $"W1:{wood1Count} W2:{wood2Count} W3:{wood3Count}");
         return true;
     }
 
@@ -178,15 +168,6 @@ public class Backpack : MonoBehaviour
         float totalTime = (wood1Count * time1) +
                           (wood2Count * time2) +
                           (wood3Count * time3);
-
-        if (totalTime > 0f)
-        {
-            Debug.Log($"Backpack: Deposit all wood! "
-                + $"W1:{wood1Count}(x{time1}s) "
-                + $"W2:{wood2Count}(x{time2}s) "
-                + $"W3:{wood3Count}(x{time3}s) "
-                + $"= +{totalTime}s fuel. Weight cleared: {currentWeight}");
-        }
 
         wood1Count = 0;
         woodText1.textCount(wood1Count);

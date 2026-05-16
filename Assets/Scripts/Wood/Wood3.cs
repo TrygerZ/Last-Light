@@ -23,31 +23,24 @@ public class Wood3 : MonoBehaviour
 
     private void Update()
     {
-        if (!playerInRange || isPickedUp)
-        {
+        if (Input.GetKeyUp(KeyCode.E))
+            Backpack.IsPlayerPickingUp = false;
+
+        if (!playerInRange || isPickedUp || Backpack.IsPlayerPickingUp)
             return;
-        }
 
         if (Input.GetKeyDown(KeyCode.E))
-        {
             PickUp();
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (IsPlayer(other))
-        {
-            playerInRange = true;
-        }
+        if (IsPlayer(other)) playerInRange = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (IsPlayer(other))
-        {
-            playerInRange = false;
-        }
+        if (IsPlayer(other)) playerInRange = false;
     }
 
     private bool IsPlayer(Collider2D other)
@@ -61,30 +54,28 @@ public class Wood3 : MonoBehaviour
 
     private void PickUp()
     {
-        if (Backpack.Instance == null)
-            return;
+        Backpack.IsPlayerPickingUp = true;
 
-        // Check capacity before picking up
+        if (Backpack.Instance == null) return;
+
         if (!Backpack.Instance.CanAddWood(woodType))
         {
-            Debug.LogWarning($"Cannot pick up {woodType} (weight: {weight}) — backpack full! "
-                + $"({Backpack.Instance.CurrentWeight}/{Backpack.Instance.MaxCapacity})");
+            Debug.LogWarning($"Cannot pick up {woodType} — backpack full! ({Backpack.Instance.CurrentWeight}/{Backpack.Instance.MaxCapacity})");
             return;
         }
 
         isPickedUp = true;
 
-        bool added = Backpack.Instance.AddWood(woodType);
-        if (!added)
+        if (!Backpack.Instance.AddWood(woodType))
         {
             isPickedUp = false;
             return;
         }
 
-        if (spawner != null)
-        {
-            spawner.OnWoodPickedUp();
-        }
+        spawner?.OnWoodPickedUp();
+
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.pickupWoodSFX);
 
         Destroy(gameObject);
     }

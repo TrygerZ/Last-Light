@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
-
     [SerializeField] private int scene;
     [SerializeField] GameObject fadeObj;
     private ScreenFadeIn fade;
@@ -16,6 +15,5 @@ public class WinScreen : MonoBehaviour
     {
         Time.timeScale = 1f;
         fade.FadeStart(scene);
-        Debug.Log($"🏆 PLAYER MENANG! Loading scene: Win Scene");
     }
 }

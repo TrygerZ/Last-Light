@@ -5,7 +5,7 @@ public class CampfireBurnout : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private float baseCampfireDuration = 120f;
-    [Tooltip("Starting timer value (campfire starts partially burned). Default: 60s = 1 minute.")]
+    [Tooltip("Starting timer value. Default: 60s = 1 minute.")]
     [SerializeField] private float startingTime = 60f;
 
     [Header("Gradual Refill Settings")]
@@ -14,7 +14,6 @@ public class CampfireBurnout : MonoBehaviour
     [SerializeField] private float refillInterval = 0.25f;
 
     [Header("Animation")]
-    [Tooltip("Assign campfire Animator. Use SetBool('IsLit', true/false) for lit/extinguished states.")]
     [SerializeField] private Animator campfireAnimator;
 
     [Header("Debug (Readonly)")]
@@ -38,7 +37,6 @@ public class CampfireBurnout : MonoBehaviour
 
         if (light2D == null)
             Debug.LogError("CampfireBurnout: Light2D component not found!");
-
         if (damageComponent == null)
             Debug.LogError("CampfireBurnout: Damage component not found!");
     }
@@ -56,9 +54,7 @@ public class CampfireBurnout : MonoBehaviour
         light2D.intensity = Mathf.Lerp(0f, 1f, NormalizedTime);
 
         if (remainingTime <= 0f)
-        {
             Extinguish();
-        }
 
         if (playerInRange && playerRoot != null)
         {
@@ -80,8 +76,6 @@ public class CampfireBurnout : MonoBehaviour
 
         if (campfireAnimator != null)
             campfireAnimator.SetBool("IsLit", false);
-
-        Debug.Log("🔥🔥 Campfire has been extinguished! Bring wood to relight it.");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -108,13 +102,10 @@ public class CampfireBurnout : MonoBehaviour
     private bool IsPlayer(Collider2D other)
     {
         if (other == null) return false;
-
         if (other.CompareTag("PlayerBody") || other.CompareTag("Player"))
             return true;
-
         if (other.transform.root.CompareTag("Player"))
             return true;
-
         return false;
     }
 
@@ -139,7 +130,8 @@ public class CampfireBurnout : MonoBehaviour
                     campfireAnimator.SetBool("IsLit", true);
             }
 
-            Debug.Log($"🔥 Campfire received {totalTime}s of fuel from all wood!");
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlaySFXSliced(AudioManager.Instance.depositWoodSFX, 0.5f, 2.5f);
         }
     }
 

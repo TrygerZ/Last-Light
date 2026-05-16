@@ -306,7 +306,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.1
+  m_fontSize: 32.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -631,7 +631,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1395008559
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8537718827585112970, guid: 2d50dc433f7204d459526b644edf147b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 155466359}
   - component: {fileID: 155466360}
   m_Layer: 0
-  m_Name: WoodSpawner_lvl1
+  m_Name: WoodSpawner_Dekat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,15 +878,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WoodSpawner
   woodPrefab: {fileID: 465610908160972485, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
   woodContainer: {fileID: 1867148944}
-  spawnInterval: 1
+  spawnInterval: 4
   maxWoodCount: 10
-  spawnAreaMin: {x: -150, y: -2.78}
-  spawnAreaMax: {x: 150, y: -2.78}
-  exclusionXMin: -30
-  exclusionXMax: 30
-  wood1Weight: 60
-  wood2Weight: 30
-  wood3Weight: 10
+  spawnAreaMin: {x: -150, y: 0}
+  spawnAreaMax: {x: 150, y: 0}
+  spawnY: -2.166439
+  exclusionXMin: -20
+  exclusionXMax: 20
+  wood1Weight: 90
+  wood2Weight: 10
+  wood3Weight: 0
   wood1Prefab: {fileID: 465610908160972485, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
   wood2Prefab: {fileID: 982056747370159609, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
   wood3Prefab: {fileID: 5789200093759024974, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
@@ -1224,7 +1225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12200001, y: 0.134}
   m_AnchorMax: {x: 0.74, y: 0.592868}
-  m_AnchoredPosition: {x: 1.1039963, y: 0.4449997}
+  m_AnchoredPosition: {x: 1.1040039, y: 0.44500732}
   m_SizeDelta: {x: -0.26, y: -0.94000006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &328359707
@@ -1764,6 +1765,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431110801}
   m_CullTransparentMesh: 1
+--- !u!1 &437684753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 437684754}
+  m_Layer: 0
+  m_Name: Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &437684754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437684753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -100, y: -0.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &500647570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2294,7 +2326,7 @@ GameObject:
   - component: {fileID: 618820718}
   - component: {fileID: 618820719}
   m_Layer: 0
-  m_Name: WoodSpawner_lvl2
+  m_Name: WoodSpawner_Tengah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2329,12 +2361,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WoodSpawner
   woodPrefab: {fileID: 982056747370159609, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
   woodContainer: {fileID: 1867148944}
-  spawnInterval: 2
+  spawnInterval: 6
   maxWoodCount: 5
-  spawnAreaMin: {x: -150, y: -2.7}
-  spawnAreaMax: {x: 150, y: -2.7}
-  exclusionXMin: -30
-  exclusionXMax: 30
+  spawnAreaMin: {x: -150, y: 0}
+  spawnAreaMax: {x: 150, y: 0}
+  spawnY: -2.166439
+  exclusionXMin: -50
+  exclusionXMax: 50
   wood1Weight: 60
   wood2Weight: 30
   wood3Weight: 10
@@ -2602,18 +2635,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6115129852923450563, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7996016467779673720, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709020782643321469, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 9123456789012345678, guid: bba630b84b91a1d46b7aa51d6e6e0813, type: 3}
       propertyPath: fireBar
       value: 
@@ -2876,6 +2897,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WinScreen
   scene: 2
   fadeObj: {fileID: 1061928959}
+--- !u!1 &741559889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741559891}
+  - component: {fileID: 741559890}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &741559890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741559889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd40a2158d624cc4583c3638c24dcbea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicTrigger
+  musicClip: {fileID: 8300000, guid: 27f535952a5c8a848bc26b0213b27581, type: 3}
+--- !u!4 &741559891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741559889}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.42732, y: 0.82764, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &750811548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3270,7 +3336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0644714, y: 0.28800002}
   m_AnchorMax: {x: 0.82647145, y: 0.81051296}
-  m_AnchoredPosition: {x: 1, y: 0.29999924}
+  m_AnchoredPosition: {x: 1, y: 0.29999542}
   m_SizeDelta: {x: 4.2778015, y: 0.099300385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &889716884
@@ -3667,15 +3733,15 @@ MonoBehaviour:
   right: 30
   outsideDistance: 150
   moonTimer: {fileID: 722777214}
-  awalMinCD: 8
-  awalMaxCD: 14
-  awalLimit: 3
-  tengahMinCD: 5
-  tengahMaxCD: 9
-  tengahLimit: 5
-  akhirMinCD: 2.5
-  akhirMaxCD: 5
-  akhirLimit: 7
+  awalMinCD: 6
+  awalMaxCD: 10
+  awalLimit: 5
+  tengahMinCD: 3
+  tengahMaxCD: 6
+  tengahLimit: 8
+  akhirMinCD: 1.5
+  akhirMaxCD: 3
+  akhirLimit: 12
   currentSpawn: 0
 --- !u!1 &1186486388
 GameObject:
@@ -3751,7 +3817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.36964586, y: 0.20455557}
   m_AnchorMax: {x: 0.62600005, y: 0.3482963}
-  m_AnchoredPosition: {x: 4, y: 0.50006104}
+  m_AnchoredPosition: {x: 4, y: 0.5}
   m_SizeDelta: {x: 8.923218, y: 12.373779}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1261908361
@@ -4759,7 +4825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -191.48, y: -180.66, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.62789917, y: -0.8520889}
+  m_AnchoredPosition: {x: 0.6279297, y: -0.85209656}
   m_SizeDelta: {x: -2.1882, y: -1.5733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483652442
@@ -5089,7 +5155,7 @@ GameObject:
   - component: {fileID: 1593584490}
   - component: {fileID: 1593584491}
   m_Layer: 0
-  m_Name: WoodSpawner_lvl3
+  m_Name: WoodSpawner_Jauh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5124,15 +5190,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WoodSpawner
   woodPrefab: {fileID: 5789200093759024974, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
   woodContainer: {fileID: 1867148944}
-  spawnInterval: 3
-  maxWoodCount: 2
-  spawnAreaMin: {x: -150, y: -2.45}
-  spawnAreaMax: {x: 150, y: -2.45}
-  exclusionXMin: -30
-  exclusionXMax: 30
-  wood1Weight: 60
-  wood2Weight: 30
-  wood3Weight: 10
+  spawnInterval: 10
+  maxWoodCount: 3
+  spawnAreaMin: {x: -150, y: 0}
+  spawnAreaMax: {x: 150, y: 0}
+  spawnY: -2.166439
+  exclusionXMin: -100
+  exclusionXMax: 100
+  wood1Weight: 20
+  wood2Weight: 50
+  wood3Weight: 30
   wood1Prefab: {fileID: 465610908160972485, guid: 73f46b4d7ac743e468ee333dc7186b19, type: 3}
   wood2Prefab: {fileID: 982056747370159609, guid: 93339c4d33d4d414faa4cd8d3a142240, type: 3}
   wood3Prefab: {fileID: 5789200093759024974, guid: ee67e951f8618d74a81c66097b3a27a8, type: 3}
@@ -5383,6 +5450,156 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656739781}
   m_CullTransparentMesh: 1
+--- !u!1 &1675401446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1675401449}
+  - component: {fileID: 1675401448}
+  - component: {fileID: 1675401447}
+  m_Layer: 0
+  m_Name: Audio_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1675401447
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675401446}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1675401448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675401446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec851e0caab31524caaeface1990e1ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  footstepSFX: {fileID: 0}
+  pickupWoodSFX: {fileID: 8300000, guid: 739ec3aa2c8c21f4fa3351de5cc8c36b, type: 3}
+  depositWoodSFX: {fileID: 8300000, guid: 78a0656751a968e418936297550704cb, type: 3}
+  enemyAttackSFX: {fileID: 8300000, guid: edd0cca85aa8ab443aeeb58bca272aa6, type: 3}
+  winSFX: {fileID: 8300000, guid: f17316f116ce5d24a82c393569829b88, type: 3}
+  loseSFX: {fileID: 8300000, guid: 7542c621e679fef42bace569180a1004, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: cf525b20ae3109249b616f90c8f34990, type: 3}
+  gameplayMusic: {fileID: 8300000, guid: 27f535952a5c8a848bc26b0213b27581, type: 3}
+--- !u!4 &1675401449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675401446}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769412732 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5515784327158898365, guid: 75df43a0869277f47bc050de91c68323, type: 3}
@@ -5460,7 +5677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.78800005, y: 0.018407596}
   m_AnchorMax: {x: 1, y: 0.32518485}
-  m_AnchoredPosition: {x: -12.883999, y: 3.899994}
+  m_AnchoredPosition: {x: -12.884003, y: 3.9000092}
   m_SizeDelta: {x: 26.360199, y: -6.0671997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1807125609
@@ -6169,7 +6386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.011336353, y: 0}
   m_AnchorMax: {x: 0.97317046, y: 0.48200002}
-  m_AnchoredPosition: {x: -0.3982849, y: 0.000030517578}
+  m_AnchoredPosition: {x: -0.3982544, y: 0.000030517578}
   m_SizeDelta: {x: 0.79649997, y: 0.0001296997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972967910
@@ -6206,11 +6423,6 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 3
   m_ColliderType: 1
---- !u!95 &2004600027 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2629727906964853812, guid: 75df43a0869277f47bc050de91c68323, type: 3}
-  m_PrefabInstance: {fileID: 985882313700281517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2030706458
 GameObject:
   m_ObjectHideFlags: 0
@@ -6506,7 +6718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.22251716, y: 0.9624756}
-  m_AnchoredPosition: {x: 0.0002746582, y: 0.76535034}
+  m_AnchoredPosition: {x: 0.00024414062, y: 0.76535034}
   m_SizeDelta: {x: 0, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2079798644
@@ -6704,18 +6916,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4813374097888124185, guid: 75df43a0869277f47bc050de91c68323, type: 3}
-      propertyPath: torchRefillRate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4813374097888124185, guid: 75df43a0869277f47bc050de91c68323, type: 3}
-      propertyPath: campfireAnimator
-      value: 
-      objectReference: {fileID: 2004600027}
-    - target: {fileID: 5194425323160193976, guid: 75df43a0869277f47bc050de91c68323, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8748053427673427089, guid: 75df43a0869277f47bc050de91c68323, type: 3}
       propertyPath: m_Name
       value: Camp Fire
@@ -6736,18 +6936,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6448581525561414, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1051077929990019938, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
-      propertyPath: m_SortingOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1185694146849715811, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3921633563758387573, guid: 178d91d65bbed424ebd9f70c4a719684, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6868,5 +7056,8 @@ SceneRoots:
   - {fileID: 708243139}
   - {fileID: 889716887}
   - {fileID: 722777215}
+  - {fileID: 1675401449}
+  - {fileID: 741559891}
   - {fileID: 114951209}
   - {fileID: 688839561}
+  - {fileID: 437684754}

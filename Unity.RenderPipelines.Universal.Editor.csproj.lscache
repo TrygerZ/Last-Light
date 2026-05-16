@@ -600,31 +600,17 @@ Library/PackageCache/
 Temp/bin/Debug/
  Unity.2D.Animation.Runtime.dll
  Unity.2D.Common.Path.Editor.dll
- Unity.2D.Common.Runtime.dll
- Unity.2D.SpriteShape.Runtime.dll
- Unity.Burst.dll
  Unity.Burst.Editor.dll
- Unity.Collections.dll
- Unity.InputSystem.dll
- Unity.InternalAPIEditorBridge.ShaderGraph.Editor.dll
- Unity.InternalAPIEngineBridge.001.dll
- Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll
- Unity.Mathematics.dll
  Unity.Mathematics.Editor.dll
- Unity.PathTracing.Editor.dll
  Unity.PathTracing.Runtime.dll
- Unity.RenderPipeline.Universal.ShaderLibrary.dll
  Unity.RenderPipelines.Core.Editor.dll
  Unity.RenderPipelines.Core.Editor.Shared.dll
  Unity.RenderPipelines.Core.Runtime.dll
  Unity.RenderPipelines.Core.Runtime.Shared.dll
  Unity.RenderPipelines.GPUDriven.Runtime.dll
  Unity.RenderPipelines.Universal.2D.Runtime.dll
- Unity.RenderPipelines.Universal.Config.Runtime.dll
  Unity.RenderPipelines.Universal.Runtime.dll
- Unity.Searcher.Editor.dll
  Unity.ShaderGraph.Editor.dll
- Unity.ShaderGraph.Utilities.dll
  Unity.SurfaceCache.Runtime.dll
  Unity.UnifiedRayTracing.Runtime.dll
  UnityEditor.TestRunner.dll

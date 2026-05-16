@@ -8,7 +8,7 @@ public class TorchBurnout : MonoBehaviour
     [SerializeField] private Animator playerAnimator;
 
     [Header("Settings")]
-    [SerializeField] private float maxTorchDuration = 30f;
+    [SerializeField] private float maxTorchDuration = 60f;
 
     [Header("Debug (Readonly)")]
     [SerializeField] private float remainingTime;
@@ -28,7 +28,6 @@ public class TorchBurnout : MonoBehaviour
 
         if (light2D == null)
             Debug.LogError("TorchBurnout: Light2D component not found!");
-
         if (damageComponent == null)
             Debug.LogError("TorchBurnout: Damage component not found!");
     }
@@ -49,9 +48,7 @@ public class TorchBurnout : MonoBehaviour
         light2D.intensity = Mathf.Lerp(0f, 1f, NormalizedTime);
 
         if (remainingTime <= 0f)
-        {
             Extinguish();
-        }
     }
 
     private void Extinguish()
@@ -62,8 +59,6 @@ public class TorchBurnout : MonoBehaviour
         damageComponent.enabled = false;
 
         if (playerAnimator != null) playerAnimator.SetBool("IsTorchLit", false);
-
-        Debug.Log("🔥 Torch has been extinguished! Find a campfire to relight it.");
     }
 
     public void RefillFull()
@@ -74,8 +69,6 @@ public class TorchBurnout : MonoBehaviour
         light2D.intensity = 1f;
 
         if (playerAnimator != null) playerAnimator.SetBool("IsTorchLit", true);
-
-        Debug.Log("🔥 Torch has been fully refilled!");
     }
 
     public void RefillTorch(float amount)
@@ -85,7 +78,5 @@ public class TorchBurnout : MonoBehaviour
         damageComponent.enabled = true;
 
         if (playerAnimator != null) playerAnimator.SetBool("IsTorchLit", true);
-
-        Debug.Log($"🔥 Torch refilled by {amount}s. Remaining: {remainingTime:F1}s");
     }
 }

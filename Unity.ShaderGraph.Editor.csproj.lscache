@@ -1146,19 +1146,11 @@ Library/PackageCache/
   Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll
   Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll
 Temp/bin/Debug/
- Unity.Burst.dll
- Unity.Collections.dll
- Unity.InputSystem.dll
  Unity.InternalAPIEditorBridge.ShaderGraph.Editor.dll
- Unity.Mathematics.dll
- Unity.PathTracing.Editor.dll
- Unity.PathTracing.Runtime.dll
  Unity.RenderPipelines.Core.Editor.dll
  Unity.RenderPipelines.Core.Runtime.dll
- Unity.RenderPipelines.GPUDriven.Runtime.dll
  Unity.Searcher.Editor.dll
  Unity.ShaderGraph.Utilities.dll
- Unity.UnifiedRayTracing.Runtime.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
  UnityEngine.TestRunner.dll

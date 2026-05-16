@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Damage : MonoBehaviour
@@ -6,21 +7,17 @@ public class Damage : MonoBehaviour
     public int damage;
     [SerializeField] float damageCooldown;
 
-    [Header("Invulnerability Frames (Player Only)")]
-    [Tooltip("Duration of invulnerability after taking damage (shared across all enemies). Prevents death-spiral from multiple enemies.")]
+    [Header("Invulnerability Frames")]
+    [Tooltip("Duration of invulnerability after taking damage (shared across all enemies).")]
     [SerializeField] private float invulnerabilityDuration = 0.5f;
     [SerializeField] private bool isEnemy;
 
-    private Health health;
+    private List<Health> targetsInRange = new List<Health>();
     private float timeCheck;
-    private float invulnerabilityTimer;
 
-    // Static shared invulnerability for player across ALL enemy Damage components
     private static float sharedInvulnerabilityTimer = 0f;
 
-    public float DamageCooldown => damageCooldown;
-
-    private void Awake()
+    private void Start()
     {
         timeCheck = damageCooldown;
     }
@@ -31,60 +28,55 @@ public class Damage : MonoBehaviour
         if (otherDamage != null)
         {
             if (otherDamage.isEnemy == isEnemy)
-            {
                 return;
-            }
         }
 
-        health = collision.GetComponent<Health>();
+        Health newHealth = collision.GetComponent<Health>();
+        if (newHealth != null && !targetsInRange.Contains(newHealth))
+            targetsInRange.Add(newHealth);
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         Health exitingHealth = collision.GetComponent<Health>();
-        if (exitingHealth != null && exitingHealth == health)
-        {
-            health = null;
-            timeCheck = damageCooldown;
-        }
+        if (exitingHealth != null)
+            targetsInRange.Remove(exitingHealth);
     }
 
     private void Update()
     {
-        // Update shared invulnerability timer globally
         if (sharedInvulnerabilityTimer > 0f)
-        {
             sharedInvulnerabilityTimer -= Time.deltaTime;
-        }
 
-        if (health != null)
+        targetsInRange.RemoveAll(t => t == null || t.gameObject == null);
+
+        if (targetsInRange.Count == 0) return;
+
+        timeCheck += Time.deltaTime;
+        if (timeCheck >= damageCooldown)
         {
-            if (health.gameObject == null)
-            {
-                health = null;
-                timeCheck = 0;
-                return;
-            }
+            timeCheck = 0f;
 
-            // Skip damage ONLY if an enemy tries to hit player during invulnerability frames
-            // Player can ALWAYS attack enemies regardless of i-frame status
-            if (isEnemy && sharedInvulnerabilityTimer > 0f)
+            for (int i = targetsInRange.Count - 1; i >= 0; i--)
             {
-                return;
-            }
-
-            timeCheck += Time.deltaTime;
-            if (timeCheck >= damageCooldown)
-            {
-                health.TakeDamage(damage);
-
-                // Trigger invulnerability frames if this is an enemy hitting a non-enemy (player)
-                if (isEnemy)
+                Health target = targetsInRange[i];
+                if (target == null || target.gameObject == null)
                 {
-                    sharedInvulnerabilityTimer = invulnerabilityDuration;
+                    targetsInRange.RemoveAt(i);
+                    continue;
                 }
 
-                timeCheck = 0;
+                if (isEnemy && sharedInvulnerabilityTimer > 0f)
+                    continue;
+
+                target.TakeDamage(damage);
+
+                if (isEnemy)
+                    sharedInvulnerabilityTimer = invulnerabilityDuration;
             }
+
+            if (isEnemy && AudioManager.Instance != null)
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyAttackSFX);
         }
     }
 }

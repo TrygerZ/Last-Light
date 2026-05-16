@@ -12,8 +12,6 @@ public class EnemyDeath : MonoBehaviour
     private void OnDestroy()
     {
         if (spawner != null)
-        {
             spawner.DecreaseSpawnCount(1);
-        }
     }
 }
