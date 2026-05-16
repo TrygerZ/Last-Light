@@ -352,8 +352,6 @@ Library/PackageCache/
   Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll
 Temp/bin/Debug/
  Unity.AI.Toolkit.Accounts.dll
- Unity.AI.Toolkit.Asset.dll
- Unity.AI.Toolkit.Async.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
  UnityEngine.TestRunner.dll

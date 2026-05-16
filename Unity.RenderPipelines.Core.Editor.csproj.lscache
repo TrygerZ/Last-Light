@@ -580,7 +580,6 @@ Library/PackageCache/
 Temp/bin/Debug/
  Unity.Burst.dll
  Unity.Collections.dll
- Unity.InputSystem.dll
  Unity.Mathematics.dll
  Unity.PathTracing.Editor.dll
  Unity.PathTracing.Runtime.dll

@@ -557,9 +557,6 @@ Library/PackageCache/
   Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll
 Temp/bin/Debug/
  Unity.Burst.dll
- Unity.Collections.dll
- Unity.InputSystem.dll
- Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll
  Unity.Mathematics.dll
  Unity.PathTracing.Runtime.dll
  Unity.RenderPipeline.Universal.ShaderLibrary.dll
@@ -569,9 +566,7 @@ Temp/bin/Debug/
  Unity.RenderPipelines.Universal.Config.Runtime.dll
  Unity.SurfaceCache.Runtime.dll
  Unity.UnifiedRayTracing.Runtime.dll
- UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
- UnityEngine.TestRunner.dll
  UnityEngine.UI.dll
 
 [analyzerReferences]

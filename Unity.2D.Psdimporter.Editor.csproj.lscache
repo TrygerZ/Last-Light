@@ -382,26 +382,12 @@ Temp/bin/Debug/
  Unity.2D.Animation.Editor.dll
  Unity.2D.Animation.Runtime.dll
  Unity.2D.Common.Editor.dll
- Unity.2D.Common.Runtime.dll
  Unity.2D.Sprite.Editor.dll
  Unity.2D.Tilemap.Editor.dll
- Unity.2D.Triangulation.Runtime.dll
  Unity.Burst.dll
- Unity.Collections.dll
- Unity.InputSystem.dll
  Unity.InternalAPIEditorBridge.001.dll
  Unity.InternalAPIEngineBridge.001.dll
- Unity.InternalAPIEngineBridge.RenderPipelines.Core.Runtime.Shared.dll
  Unity.Mathematics.dll
- Unity.PathTracing.Runtime.dll
- Unity.RenderPipeline.Universal.ShaderLibrary.dll
- Unity.RenderPipelines.Core.Runtime.dll
- Unity.RenderPipelines.Core.Runtime.Shared.dll
- Unity.RenderPipelines.GPUDriven.Runtime.dll
- Unity.RenderPipelines.Universal.Config.Runtime.dll
- Unity.RenderPipelines.Universal.Runtime.dll
- Unity.SurfaceCache.Runtime.dll
- Unity.UnifiedRayTracing.Runtime.dll
  UnityEditor.TestRunner.dll
  UnityEditor.UI.dll
  UnityEngine.TestRunner.dll
