@@ -3,17 +3,17 @@ using UnityEngine.UI;
 public class SanityBar : MonoBehaviour
 {
     private Slider slider;
-    private Health health;
+    private Health sanity;
 
     private void Start()
     {
-        health = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Health>();
+        sanity = GameObject.FindGameObjectWithTag("PlayerBody").GetComponent<Health>();
         slider = GetComponent<Slider>();
-        slider.maxValue = health.MaxHealth;
-        slider.value = health.MaxHealth;
+        slider.maxValue = sanity.MaxHealth;
+        slider.value = sanity.MaxHealth;
     }
-    public void setHealth(int currenthealth)
+    public void setSanity(int currentSanity)
     {
-        slider.value = currenthealth;
+        slider.value = currentSanity;
     }
 }
