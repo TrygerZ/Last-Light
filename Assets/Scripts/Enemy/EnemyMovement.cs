@@ -10,12 +10,9 @@ public class EnemyMovement : MonoBehaviour
     [Header("Patrolling stats")]
     [SerializeField] float patrolTime;
     [SerializeField] float idleTime;
-    [SerializeField] float leftBoundary;
-    [SerializeField] float rightBoundary;
     [SerializeField] float leftEdge;
     [SerializeField] float rightEdge;
 
-    private bool isLeft;
     private float patrolTimer;
     private float idleTimer;
     private int patrolDirection;
@@ -34,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        if (transform.position.x < leftBoundary)isLeft = true;
+        patrolDirection = Random.Range(0, 2) == 0 ? -1 : 1;
     }
 
     private void Start()
@@ -101,7 +98,6 @@ public class EnemyMovement : MonoBehaviour
             {
                 idleTimer = 0;
                 isIdle = false;
-
                 patrolDirection = Random.Range(0, 2) == 0 ? -1 : 1;
             }
         }
@@ -109,18 +105,12 @@ public class EnemyMovement : MonoBehaviour
         {
             patrolTimer += Time.fixedDeltaTime;
 
-            if ((transform.position.x >= leftBoundary && isLeft) || (transform.position.x >= rightEdge && !isLeft))
-            {
-                patrolDirection = -1;
-            }
-
-            if ((transform.position.x <= rightBoundary && !isLeft) || (transform.position.x <= leftEdge && isLeft))
-            {
+            if (transform.position.x <= leftEdge)
                 patrolDirection = 1;
-            }
+            else if (transform.position.x >= rightEdge)
+                patrolDirection = -1;
 
             Vector2 move = new Vector2(patrolDirection, 0);
-
             rb.linearVelocity = move * currentMoveSpeed;
 
             if (move.x > 0)

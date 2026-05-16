@@ -366,8 +366,8 @@ MonoBehaviour:
   track: 10
   patrolTime: 3
   idleTime: 2
-  leftBoundary: -20
-  rightBoundary: 20
+  leftBoundary: 0
+  rightBoundary: 0
   leftEdge: -150
   rightEdge: 150
   moonTimer: {fileID: 0}
