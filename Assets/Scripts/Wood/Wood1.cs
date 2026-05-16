@@ -23,31 +23,43 @@ public class Wood1 : MonoBehaviour
 
     private void Update()
     {
-        if (!playerInRange || isPickedUp)
-        {
+        // Reset shared lock when E is released
+        if (Input.GetKeyUp(KeyCode.E))
+            Backpack.IsPlayerPickingUp = false;
+
+        if (!playerInRange || isPickedUp || Backpack.IsPlayerPickingUp)
             return;
-        }
+
+        // Check if higher-priority wood (Wood2 or Wood3) is also in range → let them pick up first
+        if (HasHigherPriorityWoodNearby())
+            return;
 
         if (Input.GetKeyDown(KeyCode.E))
-        {
             PickUp();
+    }
+
+    private bool HasHigherPriorityWoodNearby()
+    {
+        // Check radius around player for Wood2 or Wood3 objects
+        Collider2D[] nearby = Physics2D.OverlapCircleAll(transform.position, 2f);
+        foreach (Collider2D col in nearby)
+        {
+            if (col.GetComponent<Wood2>() != null && col.GetComponent<Wood2>().enabled)
+                return true;
+            if (col.GetComponent<Wood3>() != null && col.GetComponent<Wood3>().enabled)
+                return true;
         }
+        return false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (IsPlayer(other))
-        {
-            playerInRange = true;
-        }
+        if (IsPlayer(other)) playerInRange = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (IsPlayer(other))
-        {
-            playerInRange = false;
-        }
+        if (IsPlayer(other)) playerInRange = false;
     }
 
     private bool IsPlayer(Collider2D other)
@@ -61,8 +73,9 @@ public class Wood1 : MonoBehaviour
 
     private void PickUp()
     {
-        if (Backpack.Instance == null)
-            return;
+        Backpack.IsPlayerPickingUp = true;
+
+        if (Backpack.Instance == null) return;
 
         if (!Backpack.Instance.CanAddWood(woodType))
         {
@@ -73,19 +86,14 @@ public class Wood1 : MonoBehaviour
 
         isPickedUp = true;
 
-        bool added = Backpack.Instance.AddWood(woodType);
-        if (!added)
+        if (!Backpack.Instance.AddWood(woodType))
         {
             isPickedUp = false;
             return;
         }
 
-        if (spawner != null)
-        {
-            spawner.OnWoodPickedUp();
-        }
+        spawner?.OnWoodPickedUp();
 
-        // SFX pickup kayu
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlaySFX(AudioManager.Instance.pickupWoodSFX);
 
