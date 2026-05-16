@@ -10,12 +10,20 @@ public class Health : MonoBehaviour
     public int CurrentHealth { get; private set; }
     public int MaxHealth => maxHealth;
 
+    [Header("For Enemy or player Bar")]
     [SerializeField] SanityBar sanity;
+    [SerializeField] GameObject enemyBar;
+    private EnemyHealthBar enemyBarScript;
 
 
     private void Awake()
     {
         CurrentHealth = maxHealth;
+    }
+
+    private void Start()
+    {
+        enemyBarScript = enemyBar.GetComponent<EnemyHealthBar>();
     }
 
     public void TakeDamage(int amount)
@@ -31,7 +39,12 @@ public class Health : MonoBehaviour
 
         if (CompareTag("PlayerBody"))
         {
-            sanity.setHealth(CurrentHealth);
+            sanity.setSanity(CurrentHealth);
+        }
+
+        else if (CompareTag("Enemy"))
+        {
+            enemyBarScript.setHealth(CurrentHealth);
         }
 
         if (CurrentHealth <= 0)
@@ -58,7 +71,7 @@ public class Health : MonoBehaviour
 
         if (CompareTag("PlayerBody"))
         {
-            sanity.setHealth(CurrentHealth);
+            sanity.setSanity(CurrentHealth);
         }
     }
 }
