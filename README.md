@@ -84,5 +84,3 @@ A **2D Survival Horror** side-scrolling game built with Unity. You are alone in 
 | **2D Artist** | [sambryann19](https://github.com/sambryann19) |
 
 ---
-
-*Last Light — When the sun goes down, the real game begins.*
